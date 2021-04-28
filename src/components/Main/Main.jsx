@@ -70,7 +70,7 @@ const Main = () => {
                 <div className={classes.mainFishes}>
                     <div className={classes.mainFishesBlock}>
                         <div className={classes.mainFishesBlockImg}>
-                            <img img className={classes.fishPicture} src={fishTwo} alt="fish"/>
+                            <img img className={classes.animationTwo} src={fishTwo} alt="fish"/>
                         </div>
                         <h2 className={classes.mainFishesTitle}>FISH NAME</h2>
                         <p className={classes.mainFishesTitleText}>001/100 EDITION</p>
@@ -94,7 +94,7 @@ const Main = () => {
                 <div className={classes.mainFishes}>
                     <div className={classes.mainFishesBlock}>
                         <div className={classes.mainFishesBlockImg}>
-                            <img img className={classes.fishPicture} src={fishFour} alt="fish"/>
+                            <img img className={classes.animationTwo} src={fishFour} alt="fish"/>
                         </div>
                         <h2 className={classes.mainFishesTitle}>FISH NAME</h2>
                         <p className={classes.mainFishesTitleText}>001/100 EDITION</p>
@@ -106,7 +106,7 @@ const Main = () => {
                 <div className={classes.mainFishes}>
                     <div className={classes.mainFishesBlock}>
                         <div className={classes.mainFishesBlockImg}>
-                            <img img className={classes.fishPicture} src={fishFive} alt="fish"/>
+                            <img img className={classes.animationTwo} src={fishFive} alt="fish"/>
                         </div>
                         <h2 className={classes.mainFishesTitle}>FISH NAME</h2>
                         <p className={classes.mainFishesTitleText}>001/100 EDITION</p>
@@ -130,7 +130,7 @@ const Main = () => {
                 <div className={classes.mainFishes}>
                     <div className={classes.mainFishesBlock}>
                         <div className={classes.mainFishesBlockImg}>
-                            <img img className={classes.fishPicture} src={fishSeven} alt="fish"/>
+                            <img img className={classes.animationTwo} src={fishSeven} alt="fish"/>
                         </div>
                         <h2 className={classes.mainFishesTitle}>FISH NAME</h2>
                         <p className={classes.mainFishesTitleText}>001/100 EDITION</p>
@@ -154,7 +154,7 @@ const Main = () => {
                 <div className={classes.mainFishes}>
                     <div className={classes.mainFishesBlock}>
                         <div className={classes.mainFishesBlockImg}>
-                            <img img className={classes.fishPicture} src={fishSeven} alt="fish"/>
+                            <img img className={classes.animationTwo} src={fishSeven} alt="fish"/>
                         </div>
                         <h2 className={classes.mainFishesTitle}>FISH NAME</h2>
                         <p className={classes.mainFishesTitleText}>001/100 EDITION</p>
@@ -178,7 +178,7 @@ const Main = () => {
                 <div className={classes.mainFishes}>
                     <div className={classes.mainFishesBlock}>
                         <div className={classes.mainFishesBlockImg}>
-                            <img img className={classes.fishPicture} src={fishNine} alt="fish"/>
+                            <img img className={classes.animationTwo} src={fishNine} alt="fish"/>
                         </div>
                         <h2 className={classes.mainFishesTitle}>FISH NAME</h2>
                         <p className={classes.mainFishesTitleText}>001/100 EDITION</p>

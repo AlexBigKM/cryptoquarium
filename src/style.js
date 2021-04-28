@@ -104,6 +104,44 @@ export const useStyles = makeStyles((theme) => ({
         color: '#fff',
         marginRight: '10px'
     },
+
+    // Animation start
+    fishPicture : {
+        animationName: '$moving',
+        animationDuration: '3s',
+        animationTimingFunction: 'ease',
+        animationIterationCount:'infinite',
+    },
+    animationTwo : {
+        animationName: '$moving-two',
+        animationDuration: '3.5s',
+        animationTimingFunction: 'ease',
+        animationIterationCount:'infinite',
+    },
+    '@keyframes moving' : {
+        '0%' : {
+            transform:  'translateY(0)',
+        },
+        '50%' : {
+            transform:  'translateY(-10px)',
+        },
+        '100%' : {
+            transform:  'translateY(0)',
+        },
+    },
+    '@keyframes moving-two' : {
+        '0%' : {
+            transform:  'translateY(0)',
+        },
+        '50%' : {
+            transform:  'translateY(-20px)',
+        },
+        '100%' : {
+            transform:  'translateY(0)',
+        },
+    },
+    //Animation end
+    
     fishMarket : {
         display: 'grid',
         gridTemplateColumns: 'repeat(4, minmax(250px, 1fr))',
