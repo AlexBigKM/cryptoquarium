@@ -1,5 +1,6 @@
-import { makeStyles } from '@material-ui/core/styles';
-import background from './assets/img/background1.jpg';
+import { makeStyles } from '@material-ui/core/styles'
+import background from './assets/img/background1.jpg'
+import akvarium from './assets/img/akvarium.png'
 
 export const useStyles = makeStyles((theme) => ({
     header : {
@@ -107,12 +108,14 @@ export const useStyles = makeStyles((theme) => ({
 
     // Animation start
     fishPicture : {
+        marginTop: '60px',
         animationName: '$moving',
         animationDuration: '3s',
         animationTimingFunction: 'ease',
         animationIterationCount:'infinite',
     },
     animationTwo : {
+        marginTop: '60px',
         animationName: '$moving-two',
         animationDuration: '3.5s',
         animationTimingFunction: 'ease',
@@ -147,6 +150,15 @@ export const useStyles = makeStyles((theme) => ({
         gridTemplateColumns: 'repeat(4, minmax(250px, 1fr))',
         gridGap: '80px 30px',
         padding: '50px 0'
+    },
+    mainFishesBlockImg : {
+        height: '240px',
+        width: '255px',
+        margin: '0 auto',
+        backgroundImage: 'url('+ akvarium +')',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
     },
     mainFishes : {
         padding: '10px'
