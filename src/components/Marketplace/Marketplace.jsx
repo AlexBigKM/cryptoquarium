@@ -132,7 +132,7 @@ const Marketplace = () => {
                     <div className={classes.mainFishes}>
                     <div className={classes.mainFishesBlock}>
                         <div className={classes.mainFishesBlockImg}>
-                            <img img className={classes.fishPicture} src={fishOne} alt="fish"/>
+                            <img img className={classes.animationThree} src={fishOne} alt="fish"/>
                         </div>
                         <h2 className={classes.mainFishesTitle}>FISH NAME</h2>
                         <p className={classes.mainFishesTitleText}>001/100 EDITION</p>
@@ -144,7 +144,7 @@ const Marketplace = () => {
                 <div className={classes.mainFishes}>
                     <div className={classes.mainFishesBlock}>
                         <div className={classes.mainFishesBlockImg}>
-                            <img img className={classes.animationTwo} src={fishTwo} alt="fish"/>
+                            <img img className={classes.animationFour} src={fishTwo} alt="fish"/>
                         </div>
                         <h2 className={classes.mainFishesTitle}>FISH NAME</h2>
                         <p className={classes.mainFishesTitleText}>001/100 EDITION</p>

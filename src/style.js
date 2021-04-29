@@ -110,38 +110,111 @@ export const useStyles = makeStyles((theme) => ({
     fishPicture : {
         marginTop: '60px',
         animationName: '$moving',
-        animationDuration: '3s',
+        animationDuration: '22s',
         animationTimingFunction: 'ease',
         animationIterationCount:'infinite',
     },
     animationTwo : {
         marginTop: '60px',
         animationName: '$moving-two',
-        animationDuration: '3.5s',
+        animationDuration: '24s',
         animationTimingFunction: 'ease',
         animationIterationCount:'infinite',
     },
+    animationThree : {
+        marginTop: '70px',
+        animationName: '$moving-three',
+        animationDuration: '26s',
+        animationTimingFunction: 'ease',
+        animationIterationCount:'infinite',
+    },
+    animationFour : {
+        marginTop: '40px',
+        animationName: '$moving-four',
+        animationDuration: '30s',
+        animationTimingFunction: 'ease',
+        animationIterationCount:'infinite',
+    },
+    
     '@keyframes moving' : {
         '0%' : {
-            transform:  'translateY(0)',
+            transform:  'translate(0, 0)'
         },
-        '50%' : {
-            transform:  'translateY(-10px)',
+        '20%' : {
+            transform:  'translateX(-40px) rotateY(180deg)'
+        },
+        '40%' : {
+            transform:  'translateY(-40px) rotateY(180deg)'
+        },
+        '60%' : {
+            transform:  'translateX(60px)'
+        },
+        '80%' : {
+            transform:  'translateY(60px) rotateY(180deg)'
         },
         '100%' : {
-            transform:  'translateY(0)',
-        },
+            transform:  'translate(0, 0)'
+        }
     },
     '@keyframes moving-two' : {
         '0%' : {
-            transform:  'translateY(0)',
+            transform:  'translate(0, 0)'
         },
-        '50%' : {
-            transform:  'translateY(-20px)',
+        '20%' : {
+            transform:  'translateY(-30px)'
+        },
+        '40%' : {
+            transform:  'translateX(-40px) rotateY(180deg)'
+        },
+        '60%' : {
+            transform:  'translateY(60px) rotateY(180deg)'
+        },
+        '80%' : {
+            transform:  'translateX(60px)'
         },
         '100%' : {
-            transform:  'translateY(0)',
+            transform:  'translate(0, 0)'
+        }
+    },
+    '@keyframes moving-three' : {
+        '0%' : {
+            transform:  'translate(0, 0)'
         },
+        '20%' : {
+            transform:  'translateY(50px) rotateY(180deg)'
+        },
+        '40%' : {
+            transform:  'translateX(60px) '
+        },
+        '60%' : {
+            transform:  'translateY(-50px) rotateY(180deg)'
+        },
+        '80%' : {
+            transform:  'translateX(70px)'
+        },
+        '100%' : {
+            transform:  'translate(0, 0)'
+        }
+    },
+    '@keyframes moving-four' : {
+        '0%' : {
+            transform:  'translate(0, 0)'
+        },
+        '20%' : {
+            transform:  'translateX(-40px) rotateY(180deg)'
+        },
+        '40%' : {
+            transform:  'translateY(80px) '
+        },
+        '60%' : {
+            transform:  'translateX(-50px) rotateY(180deg)'
+        },
+        '80%' : {
+            transform:  'translateX(50px) rotateY(180deg)'
+        },
+        '100%' : {
+            transform:  'translate(0, 0)'
+        }
     },
     //Animation end
     
