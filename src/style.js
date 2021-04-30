@@ -135,6 +135,20 @@ export const useStyles = makeStyles((theme) => ({
         animationTimingFunction: 'infinite',
         animationIterationCount:'infinite',
     },
+    animationFive : {
+        marginTop: '80px',
+        animationName: '$moving-five',
+        animationDuration: '34s',
+        animationTimingFunction: 'infinite',
+        animationIterationCount:'infinite',
+    },
+    animationSix : {
+        marginTop: '80px',
+        animationName: '$moving-six',
+        animationDuration: '34s',
+        animationTimingFunction: 'infinite',
+        animationIterationCount:'infinite',
+    },
     
     '@keyframes moving' : {
         '0%' : {
@@ -245,22 +259,78 @@ export const useStyles = makeStyles((theme) => ({
         '100%' : {
             transform:  'translate(0,0) '
         }
-        // '20%' : {
-        //     transform:  'rotateY(180deg)'
-        // },
-        // '40%' : {
-        //     transform:  'translateY(80px) '
-        // },
-        // '60%' : {
-        //     transform:  'rotateY(180deg)translateX(-50px) '
-        // },
-        // '80%' : {
-        //     transform:  'translateX(50px) rotateY(180deg)'
-        // },
-        // '100%' : {
-        //     transform:  'translate(0, 0)'
-        // }
     },
+    '@keyframes moving-five' : {
+        '0%' : {
+            transform:  'translate(0, 0)'
+        },
+        '20%' : {
+            transform:  'translateY(-50px)'
+        },
+        '30%' : {
+            transform:  'translateY(-50px)  rotateY(180deg)'
+        },
+        '40%' : {
+            transform:  'translateX(50px) rotateY(180deg)'
+        },
+        '45%' : {
+            transform:  'translateX(50px)'
+        },
+        '50%' : {
+            transform:  'translateY(50px)'
+        },
+        '60%' : {
+            transform:  'translateY(50px)'
+        },
+        '70%' : {
+            transform:  'translateX(-50px)'
+        },
+        '80%' : {
+            transform:  'translateX(-50px) rotateY(180deg)'
+        },
+        '90%' : {
+            transform:  'translateX(-50px) rotateY(180deg)'
+        },
+        '100%' : {
+            transform:  'translate(0,0)'
+        }
+    },
+    '@keyframes moving-six' : {
+        '0%' : {
+            transform:  'translate(0, 0)'
+        },
+        '10%' : {
+            transform:  'translateY(50px)'
+        },
+        '20%' : {
+            transform:  'translateY(50px) rotateY(180deg)'
+        },
+        '30%' : {
+            transform:  'translateX(50px) rotateY(180deg)'
+        },
+        '40%' : {
+            transform:  'translateX(50px)'
+        },
+        '50%' : {
+            transform:  'translateY(-50px)'
+        },
+        '60%' : {
+            transform:  'translateX(-50px)'
+        },
+        '70%' : {
+            transform:  'translateX(-50px) rotateY(180deg)'
+        },
+        '80%' : {
+            transform:  'translateY(50px) rotateY(180deg)'
+        },
+        '90%' : {
+            transform:  'translateY(50px)'
+        },
+        '100%' : {
+            transform:  'translate(0,0) '
+        }
+    },
+
     //Animation end
     
     fishMarket : {
