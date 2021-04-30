@@ -117,22 +117,22 @@ export const useStyles = makeStyles((theme) => ({
     animationTwo : {
         marginTop: '60px',
         animationName: '$moving-two',
-        animationDuration: '24s',
+        animationDuration: '30s',
         animationTimingFunction: 'ease',
         animationIterationCount:'infinite',
     },
     animationThree : {
         marginTop: '70px',
         animationName: '$moving-three',
-        animationDuration: '26s',
+        animationDuration: '28s',
         animationTimingFunction: 'ease',
         animationIterationCount:'infinite',
     },
     animationFour : {
         marginTop: '40px',
         animationName: '$moving-four',
-        animationDuration: '30s',
-        animationTimingFunction: 'ease',
+        animationDuration: '34s',
+        animationTimingFunction: 'infinite',
         animationIterationCount:'infinite',
     },
     
@@ -141,16 +141,25 @@ export const useStyles = makeStyles((theme) => ({
             transform:  'translate(0, 0)'
         },
         '20%' : {
+            transform:  'translateX(-40px)'
+        },
+        '30%' : {
             transform:  'translateX(-40px) rotateY(180deg)'
         },
         '40%' : {
             transform:  'translateY(-40px) rotateY(180deg)'
         },
+        '50%' : {
+            transform:  'translateY(-40px) rotateY(180deg)'
+        },
         '60%' : {
+            transform:  'translateX(60px) rotateY(180deg)'
+        },
+        '70%' : {
             transform:  'translateX(60px)'
         },
         '80%' : {
-            transform:  'translateY(60px) rotateY(180deg)'
+            transform:  'translateY(60px)'
         },
         '100%' : {
             transform:  'translate(0, 0)'
@@ -158,19 +167,25 @@ export const useStyles = makeStyles((theme) => ({
     },
     '@keyframes moving-two' : {
         '0%' : {
-            transform:  'translate(0, 0)'
+            transform:  'translate(0, 0) '
         },
         '20%' : {
             transform:  'translateY(-30px)'
         },
         '40%' : {
+            transform:  'translateX(-40px)'
+        },
+        '50%' : {
             transform:  'translateX(-40px) rotateY(180deg)'
         },
         '60%' : {
-            transform:  'translateY(60px) rotateY(180deg)'
+            transform:  'translateX(40px) rotateY(180deg)'
+        },
+        '70%' : {
+            transform:  'translateX(40px)'
         },
         '80%' : {
-            transform:  'translateX(60px)'
+            transform:  'translateY(60px)'
         },
         '100%' : {
             transform:  'translate(0, 0)'
@@ -181,15 +196,27 @@ export const useStyles = makeStyles((theme) => ({
             transform:  'translate(0, 0)'
         },
         '20%' : {
+            transform:  'translateY(50px)'
+        },
+        '30%' : {
             transform:  'translateY(50px) rotateY(180deg)'
         },
         '40%' : {
-            transform:  'translateX(60px) '
+            transform:  'translateX(60px) rotateY(180deg)'
+        },
+        '50%' : {
+            transform:  'translateX(60px)'
         },
         '60%' : {
+            transform:  'translateY(-50px)'
+        },
+        '70%' : {
             transform:  'translateY(-50px) rotateY(180deg)'
         },
         '80%' : {
+            transform:  'translateX(70px)  rotateY(180deg)'
+        },
+        '90%' : {
             transform:  'translateX(70px)'
         },
         '100%' : {
@@ -201,20 +228,38 @@ export const useStyles = makeStyles((theme) => ({
             transform:  'translate(0, 0)'
         },
         '20%' : {
-            transform:  'translateX(-40px) rotateY(180deg)'
+            transform:  'translateX(-50px)'
         },
-        '40%' : {
-            transform:  'translateY(80px) '
-        },
-        '60%' : {
+        '30%' : {
             transform:  'translateX(-50px) rotateY(180deg)'
         },
-        '80%' : {
+        '40%' : {
             transform:  'translateX(50px) rotateY(180deg)'
         },
+        '60%' : {
+            transform:  'translateX(50px) '
+        },
+        '80%' : {
+            transform:  'translateY(50px)'
+        },
         '100%' : {
-            transform:  'translate(0, 0)'
+            transform:  'translate(0,0) '
         }
+        // '20%' : {
+        //     transform:  'rotateY(180deg)'
+        // },
+        // '40%' : {
+        //     transform:  'translateY(80px) '
+        // },
+        // '60%' : {
+        //     transform:  'rotateY(180deg)translateX(-50px) '
+        // },
+        // '80%' : {
+        //     transform:  'translateX(50px) rotateY(180deg)'
+        // },
+        // '100%' : {
+        //     transform:  'translate(0, 0)'
+        // }
     },
     //Animation end
     
