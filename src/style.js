@@ -1,6 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles'
 import background from './assets/img/background1.jpg'
 import akvarium from './assets/img/akvarium.png'
+import akvariumMarket from './assets/img/akvarium-mark.png'
 
 export const useStyles = makeStyles((theme) => ({
     header : {
@@ -36,6 +37,7 @@ export const useStyles = makeStyles((theme) => ({
         fontSize: '20px'
     },
     headerMenuItemsLink : {
+        display: 'none',
         transition: 'all .5s',
         '&:hover' : {
             color: '#fff'
@@ -57,6 +59,7 @@ export const useStyles = makeStyles((theme) => ({
         padding: '10px 0'
     },
     mainBarItem : {
+        display: 'none',
         width: '40px',
         height: '40px',
         marginRight: '20px'
@@ -110,7 +113,7 @@ export const useStyles = makeStyles((theme) => ({
     fishPicture : {
         marginTop: '60px',
         animationName: '$moving',
-        animationDuration: '22s',
+        animationDuration: '32s',
         animationTimingFunction: 'ease',
         animationIterationCount:'infinite',
     },
@@ -124,7 +127,7 @@ export const useStyles = makeStyles((theme) => ({
     animationThree : {
         marginTop: '70px',
         animationName: '$moving-three',
-        animationDuration: '28s',
+        animationDuration: '38s',
         animationTimingFunction: 'ease',
         animationIterationCount:'infinite',
     },
@@ -138,7 +141,7 @@ export const useStyles = makeStyles((theme) => ({
     animationFive : {
         marginTop: '80px',
         animationName: '$moving-five',
-        animationDuration: '34s',
+        animationDuration: '46s',
         animationTimingFunction: 'infinite',
         animationIterationCount:'infinite',
     },
@@ -146,6 +149,55 @@ export const useStyles = makeStyles((theme) => ({
         marginTop: '80px',
         animationName: '$moving-six',
         animationDuration: '34s',
+        animationTimingFunction: 'infinite',
+        animationIterationCount:'infinite',
+    },
+    animationSeven : {
+        marginTop: '40px',
+        animationName: '$moving-seven',
+        animationDuration: '25s',
+        animationTimingFunction: 'infinite',
+        animationIterationCount:'infinite',
+    },
+    animationEight : {
+        marginTop: '80px',
+        animationName: '$moving-eight',
+        animationDuration: '36s',
+        animationTimingFunction: 'infinite',
+        animationIterationCount:'infinite',
+    },
+    animationNine : {
+        marginTop: '80px',
+        animationName: '$moving-nine',
+        animationDuration: '40s',
+        animationTimingFunction: 'infinite',
+        animationIterationCount:'infinite',
+    },
+    animationTen : {
+        marginTop: '70px',
+        animationName: '$moving-ten',
+        animationDuration: '38s',
+        animationTimingFunction: 'infinite',
+        animationIterationCount:'infinite',
+    },
+    animationEleven : {
+        marginTop: '40px',
+        animationName: '$moving-eleven',
+        animationDuration: '48s',
+        animationTimingFunction: 'infinite',
+        animationIterationCount:'infinite',
+    },
+    animationTwelve : {
+        marginTop: '100px',
+        animationName: '$moving-twelve',
+        animationDuration: '50s',
+        animationTimingFunction: 'infinite',
+        animationIterationCount:'infinite',
+    },
+    animationBigFish : {
+        marginTop: '140px',
+        animationName: '$moving-bigfish',
+        animationDuration: '50s',
         animationTimingFunction: 'infinite',
         animationIterationCount:'infinite',
     },
@@ -273,23 +325,23 @@ export const useStyles = makeStyles((theme) => ({
         '40%' : {
             transform:  'translateX(50px) rotateY(180deg)'
         },
-        '45%' : {
-            transform:  'translateX(50px)'
-        },
         '50%' : {
-            transform:  'translateY(50px)'
+            transform:  'translateX(50px)'
         },
         '60%' : {
             transform:  'translateY(50px)'
         },
         '70%' : {
-            transform:  'translateX(-50px)'
+            transform:  'translateY(50px)'
         },
         '80%' : {
-            transform:  'translateX(-50px) rotateY(180deg)'
+            transform:  'translateX(-50px)'
         },
         '90%' : {
             transform:  'translateX(-50px) rotateY(180deg)'
+        },
+        '95%' : {
+            transform:  'translateX(0) rotateY(180deg)'
         },
         '100%' : {
             transform:  'translate(0,0)'
@@ -330,6 +382,245 @@ export const useStyles = makeStyles((theme) => ({
             transform:  'translate(0,0) '
         }
     },
+    '@keyframes moving-seven' : {
+        '0%' : {
+            transform: 'translate(0, 0)'
+        },
+        '10%' : {
+            transform: 'translate(-20px, -20px)'
+        },
+        '20%' : {
+            transform: 'translate(-20px, -20px) rotateY(180deg)'
+        },
+        '30%' : {
+            transform: 'translateY(40px) rotateY(180deg)'
+        },
+        '40%' : {
+            transform: 'translateY(50px)'
+        },
+        '50%' : {
+            transform: 'translateY(50px)'
+        },
+        '60%' : {
+            transform: 'translateX(-40px)'
+        },
+        '70%' : {
+            transform: 'translateX(-40px) rotateY(180deg)'
+        },
+        '80%' : {
+            transform: 'translateY(40px) rotateY(180deg)'
+        },
+        '90%' : {
+            transform: 'translateY(40px)'
+        },
+        '100%' : {
+            transform: 'translate(0, 0)'
+        }
+    },
+    '@keyframes moving-eight' : {
+        '0%' : {
+            transform: 'translate(0, 0)'
+        },
+        '10%' : {
+            transform: 'translate(0, 0) rotateY(180deg)'
+        },
+        '20%' : {
+            transform: 'translate(40px, 40px) rotateY(180deg)'
+        },
+        '30%' : {
+            transform: 'translate(40px,40px)'
+        },
+        '40%' : {
+            transform: 'translate(-40px,40px)'
+        },
+        '50%' : {
+            transform: 'translateX(-40px)'
+        },
+        '60%' : {
+            transform: 'translateX(-40px) rotateY(180deg)'
+        },
+        '70%' : {
+            transform: 'translateY(-60px) rotateY(180deg)'
+        },
+        '80%' : {
+            transform: 'translateY(-60px) rotateY(180deg)'
+        },
+        '100%' : {
+            transform: 'translate(0, 0)'
+        }
+    },
+    '@keyframes moving-nine' : {
+        '0%' : {
+            transform: 'translate(0, 0)'
+        },
+        '10%' : {
+            transform: 'translateY(50px)'
+        },
+        '20%' : {
+            transform: 'translateY(-30px)'
+        },
+        '30%' : {
+            transform: 'translateY(30px)'
+        },
+        '40%' : {
+            transform: 'translateX(-40px)'
+        },
+        '50%' : {
+            transform: 'translateX(-40px) rotateY(180deg)'
+        },
+        '60%' : {
+            transform: 'translateX(40px) rotateY(180deg)'
+        },
+        '70%' : {
+            transform: 'translate(40px,-40px) rotateY(180deg)'
+        },
+        '80%' : {
+            transform: 'translate(40px,-40px) rotateY(180deg)'
+        },
+        '90%' : {
+            transform: 'translateX(40px) rotateY(180deg)'
+        },
+        '95%' : {
+            transform: 'translateX(40px)'
+        },
+        '100%' : {
+            transform: 'translate(0, 0)'
+        }
+    },
+    '@keyframes moving-ten' : {
+        '0%' : {
+            transform: 'translate(0, 0)'
+        },
+        '10%' : {
+            transform: 'translateX(-50px)'
+        },
+        '20%' : {
+            transform: 'translateX(-50px) rotateY(180deg)'
+        },
+        '30%' : {
+            transform:  'translateX(50px) rotateY(180deg)'
+        },
+        '40%' : {
+            transform:  'translateX(50px)'
+        },
+        '50%' : {
+            transform:  'translateY(50px)'
+        },
+        '70%' : {
+            transform:  'translateY(-50px)'
+        },
+        '80%' : {
+            transform:  'translateY(20px)'
+        },
+        '100%' : {
+            transform:  'translate(0, 0)'
+        }
+    },
+    '@keyframes moving-eleven' : {
+        '0%' : {
+            transform: 'translate(0, 0)'
+        },
+        '10%' : {
+            transform: 'translate(-40px, 40px)'
+        },
+        '20%' : {
+            transform: 'translate(-40px, 40px) rotateY(180deg)'
+        },
+        '30%' : {
+            transform: 'translate(40px, -5px) rotateY(180deg)'
+        },
+        '40%' : {
+            transform: 'translate(40px, -5px)'
+        },
+        '50%' : {
+            transform: 'translateY(80px)'
+        },
+        '60%' : {
+            transform: 'translateY(80px) rotateY(180deg)'
+        },
+        '70%' : {
+            transform: 'translateX(40px) rotateY(180deg)'
+        },
+        '80%' : {
+            transform: 'translateX(40px)'
+        },
+        '90%' : {
+            transform: 'translateX(40px)'
+        },
+        '100%' : {
+            transform: 'translate(0, 0)'
+        }
+    },
+    '@keyframes moving-twelve' : {
+        '0%' : {
+            transform: 'translate(0, 0)'
+        },
+        '10%' : {
+            transform: 'rotateY(180deg)'
+        },
+        '20%' : {
+            transform: 'translateX(50px) rotateY(180deg)'
+        },
+        '30%' : {
+            transform:  'translateX(50px)'
+        },
+        '40%' : {
+            transform:  'translateX(-50px)'
+        },
+        '50%' : {
+            transform:  'translateX(-50px) rotateY(180deg)'
+        },
+        '60%' : {
+            transform:  'translate(50px, -50px) rotateY(180deg)'
+        },
+        '70%' : {
+            transform:  'translate(50px, -50px)'
+        }, 
+        '80%' : {
+            transform:  'translateY(50px)'
+        },
+        '90%' : {
+            transform:  'translateY(-30px)'
+        },
+        '100%' : {
+            transform:  'translate(0, 0)'
+        }
+    },
+    '@keyframes moving-bigfish' : {
+        '0%' : {
+            transform: 'translate(0, 0)'
+        },
+        '10%' : {
+            transform: 'rotateY(180deg)'
+        },
+        '20%' : {
+            transform: 'translateX(90px) rotateY(180deg)'
+        },
+        '30%' : {
+            transform:  'translateX(90px)'
+        },
+        '40%' : {
+            transform:  'translateX(-90px)'
+        },
+        '50%' : {
+            transform:  'translateX(-90px) rotateY(180deg)'
+        },
+        '60%' : {
+            transform:  'translate(50px, -50px) rotateY(180deg)'
+        },
+        '70%' : {
+            transform:  'translate(90px, -50px)'
+        }, 
+        '80%' : {
+            transform:  'translateX(20px)'
+        },
+        '90%' : {
+            transform:  'translateY(90px)'
+        },
+        '100%' : {
+            transform:  'translate(0, 0)'
+        }
+    },
 
     //Animation end
     
@@ -353,6 +644,7 @@ export const useStyles = makeStyles((theme) => ({
     },
     mainFishesTitle : {
         color: '#75ec9b',
+        textTransform: 'uppercase',
         marginBottom: 0
     },
     mainFishesTitleText : {
@@ -370,29 +662,31 @@ export const useStyles = makeStyles((theme) => ({
 
     marketItem : {
         display: 'flex',
-        justifyContent: 'space-around',
-        alignItems: 'center'
+        justifyContent: 'space-around'
     },
     marketItemImg : {
         width: '50%',
-        '& > img' : {
-            display: 'block',
-            margin: '0 auto'
-        },
+        height: '577px',
+        backgroundImage: 'url('+ akvariumMarket +')',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
     },
     marketItemDescr : {
         width: '50%',
+        marginLeft: '50px',
         textAlign: 'left',
         color: '#fff'
     },
     marketItemTitle : {
         color: '#fff',
         marginBottom: 0,
-        fontSize: '50px'
+        fontSize: '70px'
     },
     marketItemTitleItem : {
         color: '#75ec9b',
         marginTop: 0,
+        fontSize: '35px',
         marginBottom: '12px'
     },
     marketItemLine : {
@@ -403,10 +697,10 @@ export const useStyles = makeStyles((theme) => ({
     },
     marketItemDescrText : {
         marginBottom: 0,
-        fontSize: '12px'
+        fontSize: '15px'
     },
     marketItemDescrTitle : {
-        fontSize: '20px'
+        fontSize: '25px'
     },
     marketItemBtn : {
         display: 'block',
@@ -493,7 +787,8 @@ export const useStyles = makeStyles((theme) => ({
         }
     },
     footerForm : {
-        display: 'flex',
+        display: 'none',
+        // display: 'flex',
         justifyContent: 'flex-end'
     },
     footerFormLabel : {

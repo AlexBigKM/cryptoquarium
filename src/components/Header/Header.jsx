@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import Container from '@material-ui/core/Container'
 import {useStyles} from "../../style.js";
 
-import logo from '../../assets/img/logo.png';
+import logo from '../../assets/img/logo.svg'
 
 const Header = () => {
     const classes = useStyles();
@@ -17,17 +17,17 @@ const Header = () => {
             </div>
             <nav className={classes.headerMenu}>
                 <ul className={classes.headerMenuItem}>
-                    <li className={classes.headerMenuItems}>
-                        <NavLink to="/">RELEASE ARCHIVE</NavLink>
+                <li className={classes.headerMenuItems}>
+                        <NavLink  to="/">MAIN</NavLink>
                     </li>
                     <li className={classes.headerMenuItems}>
                         <NavLink  to="/marketplace">MARKETPLACE</NavLink>
                     </li>
                     <li className={classes.headerMenuItems}>
-                        <NavLink  to="/">FAQ</NavLink>
+                        <NavLink  to="/faq">FAQ</NavLink>
                     </li>
                     <li className={classes.headerMenuItems}>
-                        <NavLink  to="/">CONTACT</NavLink>
+                        <NavLink  to="/contact">CONTACT</NavLink>
                     </li>
                 </ul>
                 <ul className={classes.headerMenuAuth}>

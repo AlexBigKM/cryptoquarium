@@ -1,5 +1,5 @@
 import React from 'react'
-import {useStyles} from "../../style.js";
+import {useStyles} from "../../style.js"
 import Container from '@material-ui/core/Container'
 
 import iconTable from '../../assets/img/icontable.png'
@@ -18,7 +18,7 @@ const Marketplace = () => {
             <Container maxWidth="lg" style={{padding: '50px 0'}}>
                 <div className={classes.marketItem}>
                     <div className={classes.marketItemImg}>
-                        <img img className={classes.marketFishPic} src={fishMark} alt="fish"/>
+                        <img className={classes.animationBigFish} src={fishMark} alt="fish"/>
                     </div>
                     <div className={classes.marketItemDescr}>
                         <h1 className={classes.marketItemTitle}>FISH NAME</h1>
@@ -144,7 +144,7 @@ const Marketplace = () => {
                 <div className={classes.mainFishes}>
                     <div className={classes.mainFishesBlock}>
                         <div className={classes.mainFishesBlockImg}>
-                            <img img className={classes.animationFour} src={fishTwo} alt="fish"/>
+                            <img img className={classes.animationEight} src={fishTwo} alt="fish"/>
                         </div>
                         <h2 className={classes.mainFishesTitle}>FISH NAME</h2>
                         <p className={classes.mainFishesTitleText}>001/100 EDITION</p>
@@ -156,7 +156,7 @@ const Marketplace = () => {
                 <div className={classes.mainFishes}>
                     <div className={classes.mainFishesBlock}>
                         <div className={classes.mainFishesBlockImg}>
-                            <img img className={classes.fishPicture} src={fishThree} alt="fish"/>
+                            <img img className={classes.animationTwo} src={fishThree} alt="fish"/>
                         </div>
                         <h2 className={classes.mainFishesTitle}>FISH NAME</h2>
                         <p className={classes.mainFishesTitleText}>001/100 EDITION</p>
@@ -168,7 +168,7 @@ const Marketplace = () => {
                 <div className={classes.mainFishes}>
                     <div className={classes.mainFishesBlock}>
                         <div className={classes.mainFishesBlockImg}>
-                            <img img className={classes.animationTwo} src={fishFour} alt="fish"/>
+                            <img img className={classes.animationTen} src={fishFour} alt="fish"/>
                         </div>
                         <h2 className={classes.mainFishesTitle}>FISH NAME</h2>
                         <p className={classes.mainFishesTitleText}>001/100 EDITION</p>

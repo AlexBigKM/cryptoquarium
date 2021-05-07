@@ -1,21 +1,22 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Container from '@material-ui/core/Container'
+// import axios from 'axios'
+import Data from '../../FishData.js'
+
 import {useStyles} from "../../style.js"
 import viewIcon from '../../assets/img/view-icon.png'
 import sortIcon from '../../assets/img/sort-icon.png'
-import fishOne from '../../assets/img/f1.png'
-import fishTwo from '../../assets/img/f2.png'
-import fishThree from '../../assets/img/f3.png'
-import fishFour from '../../assets/img/f4.png'
-import fishFive from '../../assets/img/f5.png'
-import fishSix from '../../assets/img/f6.png'
-import fishSeven from '../../assets/img/f7.png'
-import fishEight from '../../assets/img/f8.png'
-import fishNine from '../../assets/img/f9.png'
-import fishTen from '../../assets/img/f10.png'
 
 const Main = () => {
     const classes = useStyles();
+
+    const [term, setTerm] = useState('')
+    const [local, setLocal] = useState(Data)
+
+    const searchClick = (event) => {
+        event.preventDefault()
+        setLocal(Data.filter(fish => fish.name.toLowerCase().includes(term.toLowerCase())))
+    }
 
     return (
         <main className={classes.main}>
@@ -29,176 +30,46 @@ const Main = () => {
                             <img img className={classes.mainBarItemImg} src={viewIcon} alt="view"/>
                         </a>
                         <form className={classes.mainForm}>
-                            <input className={classes.mainFormInput} type="text" list="search" name="search" placeholder="SEARCH BY ARTISTS & AQUATIC CREATURES" />
-                            <datalist id="search">
-                                <option>Sam</option>
-                                <option>Shon</option>
-                                <option>Ti</option>
-                                <option>Kate</option>
-                            </datalist>
-                            <button className={classes.mainFormBtn} type="submit">Filters</button>
+                            <input
+                                onChange={e => setTerm(e.target.value)}
+                                value={term}
+                                className={classes.mainFormInput}
+                                type="text" list="search"
+                                name="search"
+                                placeholder="SEARCH BY ARTISTS & AQUATIC CREATURES"
+                                autocomplete="off" />
+                            <button onClick={searchClick} className={classes.mainFormBtn} type="submit">Search</button>
                         </form>
                     </div>
                     <div className={classes.mainBarRight}>
-                        <form className={classes.mainForm}>    
+                        {/* <form className={classes.mainForm}>    
                             <label className={classes.mainFormLabel}>SORT BY</label>
                             <input className={classes.mainFormInputRight} type="text" list="sort" name="sort" placeholder="LISTING DATE (NEWEST)" />
                             <datalist id="sort">
-                                <option>Sam</option>
-                                <option>Shon</option>
-                                <option>Ti</option>
-                                <option>Kate</option>
                             </datalist>
-                        </form>
+                        </form> */}
                     </div>
                     </Container>
             </div>
             <Container maxWidth="lg">
             <div className={classes.fishMarket}>
-                <div className={classes.mainFishes}>
-                    <div className={classes.mainFishesBlock}>
-                        <div className={classes.mainFishesBlockImg}>
-                            <img img className={classes.animationFive} src={fishOne} alt="fish"/>
+                {local.map(({name, url, price, id, animation}) => {
+                        return (
+                        <div key={id} className={classes.mainFishes}>
+                            <div className={classes.mainFishesBlock}>
+                                <div className={classes.mainFishesBlockImg}>
+                                    <img className={classes[animation]} src={url} alt="fish"/>
+                                </div>
+                                <h2 className={classes.mainFishesTitle}>{name}</h2>
+                                <p className={classes.mainFishesTitleText}>001/100 EDITION</p>
+                                <p className={classes.mainFishesPriceText}>LOWEST ASK</p>
+                                <h2 className={classes.mainFishesPriceTitle}>USD ${price}</h2>
+                                <p className={classes.mainFishesPriceText}>100000 LISTINGS</p>
+                            </div>
                         </div>
-                        <h2 className={classes.mainFishesTitle}>FISH NAME</h2>
-                        <p className={classes.mainFishesTitleText}>001/100 EDITION</p>
-                        <p className={classes.mainFishesPriceText}>LOWEST ASK</p>
-                        <h2 className={classes.mainFishesPriceTitle}>USD $000</h2>
-                        <p className={classes.mainFishesPriceText}>100000 LISTINGS</p>
-                    </div>
-                </div>
-                <div className={classes.mainFishes}>
-                    <div className={classes.mainFishesBlock}>
-                        <div className={classes.mainFishesBlockImg}>
-                            <img img className={classes.animationSix} src={fishTwo} alt="fish"/>
-                        </div>
-                        <h2 className={classes.mainFishesTitle}>FISH NAME</h2>
-                        <p className={classes.mainFishesTitleText}>001/100 EDITION</p>
-                        <p className={classes.mainFishesPriceText}>LOWEST ASK</p>
-                        <h2 className={classes.mainFishesPriceTitle}>USD $000</h2>
-                        <p className={classes.mainFishesPriceText}>100000 LISTINGS</p>
-                    </div>
-                </div>
-                <div className={classes.mainFishes}>
-                    <div className={classes.mainFishesBlock}>
-                        <div className={classes.mainFishesBlockImg}>
-                            <img img className={classes.fishPicture} src={fishThree} alt="fish"/>
-                        </div>
-                        <h2 className={classes.mainFishesTitle}>FISH NAME</h2>
-                        <p className={classes.mainFishesTitleText}>001/100 EDITION</p>
-                        <p className={classes.mainFishesPriceText}>LOWEST ASK</p>
-                        <h2 className={classes.mainFishesPriceTitle}>USD $000</h2>
-                        <p className={classes.mainFishesPriceText}>100000 LISTINGS</p>
-                    </div>
-                </div>
-                <div className={classes.mainFishes}>
-                    <div className={classes.mainFishesBlock}>
-                        <div className={classes.mainFishesBlockImg}>
-                            <img img className={classes.animationThree} src={fishFour} alt="fish"/>
-                        </div>
-                        <h2 className={classes.mainFishesTitle}>FISH NAME</h2>
-                        <p className={classes.mainFishesTitleText}>001/100 EDITION</p>
-                        <p className={classes.mainFishesPriceText}>LOWEST ASK</p>
-                        <h2 className={classes.mainFishesPriceTitle}>USD $000</h2>
-                        <p className={classes.mainFishesPriceText}>100000 LISTINGS</p>
-                    </div>
-                </div>
-                <div className={classes.mainFishes}>
-                    <div className={classes.mainFishesBlock}>
-                        <div className={classes.mainFishesBlockImg}>
-                            <img img className={classes.animationFour} src={fishFive} alt="fish"/>
-                        </div>
-                        <h2 className={classes.mainFishesTitle}>FISH NAME</h2>
-                        <p className={classes.mainFishesTitleText}>001/100 EDITION</p>
-                        <p className={classes.mainFishesPriceText}>LOWEST ASK</p>
-                        <h2 className={classes.mainFishesPriceTitle}>USD $000</h2>
-                        <p className={classes.mainFishesPriceText}>100000 LISTINGS</p>
-                    </div>
-                </div>
-                <div className={classes.mainFishes}>
-                    <div className={classes.mainFishesBlock}>
-                        <div className={classes.mainFishesBlockImg}>
-                            <img img className={classes.fishPicture} src={fishSix} alt="fish"/>
-                        </div>
-                        <h2 className={classes.mainFishesTitle}>FISH NAME</h2>
-                        <p className={classes.mainFishesTitleText}>001/100 EDITION</p>
-                        <p className={classes.mainFishesPriceText}>LOWEST ASK</p>
-                        <h2 className={classes.mainFishesPriceTitle}>USD $000</h2>
-                        <p className={classes.mainFishesPriceText}>100000 LISTINGS</p>
-                    </div>
-                </div>
-                <div className={classes.mainFishes}>
-                    <div className={classes.mainFishesBlock}>
-                        <div className={classes.mainFishesBlockImg}>
-                            <img img className={classes.animationFive} src={fishSeven} alt="fish"/>
-                        </div>
-                        <h2 className={classes.mainFishesTitle}>FISH NAME</h2>
-                        <p className={classes.mainFishesTitleText}>001/100 EDITION</p>
-                        <p className={classes.mainFishesPriceText}>LOWEST ASK</p>
-                        <h2 className={classes.mainFishesPriceTitle}>USD $000</h2>
-                        <p className={classes.mainFishesPriceText}>100000 LISTINGS</p>
-                    </div>
-                </div>
-                <div className={classes.mainFishes}>
-                    <div className={classes.mainFishesBlock}>
-                        <div className={classes.mainFishesBlockImg}>
-                            <img img className={classes.animationThree} src={fishEight} alt="fish"/>
-                        </div>
-                        <h2 className={classes.mainFishesTitle}>FISH NAME</h2>
-                        <p className={classes.mainFishesTitleText}>001/100 EDITION</p>
-                        <p className={classes.mainFishesPriceText}>LOWEST ASK</p>
-                        <h2 className={classes.mainFishesPriceTitle}>USD $000</h2>
-                        <p className={classes.mainFishesPriceText}>100000 LISTINGS</p>
-                    </div>
-                </div>
-                <div className={classes.mainFishes}>
-                    <div className={classes.mainFishesBlock}>
-                        <div className={classes.mainFishesBlockImg}>
-                            <img img className={classes.animationSix} src={fishSeven} alt="fish"/>
-                        </div>
-                        <h2 className={classes.mainFishesTitle}>FISH NAME</h2>
-                        <p className={classes.mainFishesTitleText}>001/100 EDITION</p>
-                        <p className={classes.mainFishesPriceText}>LOWEST ASK</p>
-                        <h2 className={classes.mainFishesPriceTitle}>USD $000</h2>
-                        <p className={classes.mainFishesPriceText}>100000 LISTINGS</p>
-                    </div>
-                </div>
-                <div className={classes.mainFishes}>
-                    <div className={classes.mainFishesBlock}>
-                        <div className={classes.mainFishesBlockImg}>
-                            <img img className={classes.animationFour} src={fishEight} alt="fish"/>
-                        </div>
-                        <h2 className={classes.mainFishesTitle}>FISH NAME</h2>
-                        <p className={classes.mainFishesTitleText}>001/100 EDITION</p>
-                        <p className={classes.mainFishesPriceText}>LOWEST ASK</p>
-                        <h2 className={classes.mainFishesPriceTitle}>USD $000</h2>
-                        <p className={classes.mainFishesPriceText}>100000 LISTINGS</p>
-                    </div>
-                </div>
-                <div className={classes.mainFishes}>
-                    <div className={classes.mainFishesBlock}>
-                        <div className={classes.mainFishesBlockImg}>
-                            <img img className={classes.animationThree} src={fishNine} alt="fish"/>
-                        </div>
-                        <h2 className={classes.mainFishesTitle}>FISH NAME</h2>
-                        <p className={classes.mainFishesTitleText}>001/100 EDITION</p>
-                        <p className={classes.mainFishesPriceText}>LOWEST ASK</p>
-                        <h2 className={classes.mainFishesPriceTitle}>USD $000</h2>
-                        <p className={classes.mainFishesPriceText}>100000 LISTINGS</p>
-                    </div>
-                </div>
-                <div className={classes.mainFishes}>
-                    <div className={classes.mainFishesBlock}>
-                        <div className={classes.mainFishesBlockImg}>
-                            <img img className={classes.fishPicture} src={fishTen} alt="fish"/>
-                        </div>
-                        <h2 className={classes.mainFishesTitle}>FISH NAME</h2>
-                        <p className={classes.mainFishesTitleText}>001/100 EDITION</p>
-                        <p className={classes.mainFishesPriceText}>LOWEST ASK</p>
-                        <h2 className={classes.mainFishesPriceTitle}>USD $000</h2>
-                        <p className={classes.mainFishesPriceText}>100000 LISTINGS</p>
-                    </div>
-                </div>
+                        )
+                    }
+                )}
             </div>
             </Container>
         </main>
