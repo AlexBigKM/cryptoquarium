@@ -17,7 +17,7 @@ function App() {
       <div className="App">
           <Header />
           <div className={classes.wrapper}>
-            <Route path='/main' component={Main} />
+            <Route exact path='/main' component={Main} />
             <Route path='/fishpage/:id' component={FishPage} />
             <Route path='/contact' component={Contact} />
             <Route path='/faq' component={Faq} />
