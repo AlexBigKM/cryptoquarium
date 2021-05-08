@@ -1,27 +1,33 @@
 import React from 'react'
 import {useStyles} from "../../style.js"
+import {useParams} from "react-router-dom";
+import Data from '../../FishData.js'
 import Container from '@material-ui/core/Container'
 
 import iconTable from '../../assets/img/icontable.png'
-import fishMark from '../../assets/img/fishmark.png'
 import fishOne from '../../assets/img/f1.png'
 import fishTwo from '../../assets/img/f2.png'
 import fishThree from '../../assets/img/f3.png'
 import fishFour from '../../assets/img/f4.png'
 
 
-const Marketplace = () => {
+const FishPage = () => {
     const classes = useStyles();
 
+    const params = useParams();
+
+    const singleFish = Data.find(item => item.id == params.id);
+    
     return (
         <div className={classes.market}>
             <Container maxWidth="lg" style={{padding: '50px 0'}}>
+            
                 <div className={classes.marketItem}>
                     <div className={classes.marketItemImg}>
-                        <img className={classes.animationBigFish} src={fishMark} alt="fish"/>
+                        <img className={classes.animationBigFish} src={singleFish.imgBig} alt="fish"/>
                     </div>
                     <div className={classes.marketItemDescr}>
-                        <h1 className={classes.marketItemTitle}>FISH NAME</h1>
+                        <h1 className={classes.marketItemTitle}>{singleFish.name}</h1>
                         <h2 className={classes.marketItemTitleItem}>by David Welker</h2>
                         <span className={classes.marketItemLine}></span>
                         <p className={classes.marketItemDescrText}>EDITION SIZE</p>
@@ -29,12 +35,15 @@ const Marketplace = () => {
                         <p className={classes.marketItemDescrText}>SOLD BY</p>
                         <span className={classes.marketItemDescrTitle}>89 COLLECTORS</span>
                         <p className={classes.marketItemDescrText}>LOWEST ASK </p>
-                        <span className={classes.marketItemDescrTitle}>USD $1000</span>
+                        <span className={classes.marketItemDescrTitle}>USD ${singleFish.price}</span>
                         <p className={classes.marketItemDescrText}>TOP SALE </p>
                         <span className={classes.marketItemDescrTitle}>USD $10000</span>
                         <button className={classes.marketItemBtn} type="submit">SELECT & BUY</button>
                     </div>
                 </div>
+            
+                
+
                 <div className={classes.tableBlock}>
                     <h2 className={classes.marketTableTitle}>TOP SALES</h2>
                     <table classname={classes.marketTableTitle} frame="border" rules="all">
@@ -183,4 +192,4 @@ const Marketplace = () => {
     );
 }
 
-export default Marketplace;
+export default FishPage;

@@ -9,6 +9,17 @@ import fishEight from './assets/img/f8.png'
 import fishNine from './assets/img/f9.png'
 import fishTen from './assets/img/f10.png'
 
+import fishOneBig from './assets/img/f1big.png'
+import fishTwoBig from './assets/img/f2big.png'
+import fishThreeBig from './assets/img/f3big.png'
+import fishFourBig from './assets/img/f4big.png'
+import fishFiveBig from './assets/img/f5big.png'
+import fishSixBig from './assets/img/f6big.png'
+import fishSevenBig from './assets/img/f7big.png'
+import fishEightBig from './assets/img/f8big.png'
+import fishNineBig from './assets/img/f9big.png'
+import fishTenBig from './assets/img/f10big.png'
+
 
 
 const fish = [
@@ -16,6 +27,7 @@ const fish = [
             "id" : 1,
             "name" : "John",
             "url": fishOne,
+            "imgBig": fishOneBig,
             "price" : 1000,
             "animation": 'animationFive'
         },
@@ -23,6 +35,7 @@ const fish = [
             "id" : 2,
             "name" : "Max",
             "url": fishTwo,
+            "imgBig": fishTwoBig,
             "price" : 2000,
             "animation": "animationTen"
         },
@@ -30,6 +43,7 @@ const fish = [
             "id" : 3,
             "name" : "Bob",
             "url": fishThree,
+            "imgBig": fishThreeBig,
             "price" : 2500,
             "animation": "animationFour"
         },
@@ -37,6 +51,7 @@ const fish = [
             "id" : 4,
             "name" : "Brad",
             "url": fishFour,
+            "imgBig": fishFourBig,
             "price" : 5500,
             "animation": "animationThree"
         },
@@ -44,6 +59,7 @@ const fish = [
             "id" : 5,
             "name" : "Aizek",
             "url": fishFive,
+            "imgBig": fishFiveBig,
             "price" : 3500,
             "animation": "animationEleven"
         },
@@ -51,6 +67,7 @@ const fish = [
             "id" : 6,
             "name" : "Joan",
             "url": fishSix,
+            "imgBig": fishSixBig,
             "price" : 1500,
             "animation": "animationSix"
         },
@@ -58,6 +75,7 @@ const fish = [
             "id" : 7,
             "name" : "Hetfield",
             "url": fishSeven,
+            "imgBig": fishSevenBig,
             "price" : 2700,
             "animation": "animationTwo"
         },
@@ -65,6 +83,7 @@ const fish = [
             "id" : 8,
             "name" : "Mia",
             "url": fishEight,
+            "imgBig": fishEightBig,
             "price" : 4500,
             "animation": "animationEight"
         },
@@ -72,6 +91,7 @@ const fish = [
             "id" : 9,
             "name" : "Julia",
             "url": fishNine,
+            "imgBig": fishNineBig,
             "price" : 5900,
             "animation": "animationNine"
         },
@@ -79,6 +99,7 @@ const fish = [
             "id" : 10,
             "name" : "Salma",
             "url": fishTen,
+            "imgBig": fishTenBig,
             "price" : 4800,
             "animation": "fishPicture"
         },
@@ -86,6 +107,7 @@ const fish = [
             "id" : 11,
             "name" : "Alex",
             "url": fishFive,
+            "imgBig": fishFiveBig,
             "price" : 9500,
             "animation": "animationSeven"
         },
@@ -93,6 +115,7 @@ const fish = [
             "id" : 12,
             "name" : "Sem",
             "url": fishThree,
+            "imgBig": fishThreeBig,
             "price" : 6500,
             "animation": "animationTwelve"
         }

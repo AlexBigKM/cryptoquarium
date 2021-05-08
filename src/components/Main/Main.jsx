@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { NavLink } from 'react-router-dom'
 import Container from '@material-ui/core/Container'
 // import axios from 'axios'
 import Data from '../../FishData.js'
@@ -55,7 +56,7 @@ const Main = () => {
             <div className={classes.fishMarket}>
                 {local.map(({name, url, price, id, animation}) => {
                         return (
-                        <div key={id} className={classes.mainFishes}>
+                        <NavLink  to={`/fishpage/${id}`} key={id} className={classes.mainFishes}>
                             <div className={classes.mainFishesBlock}>
                                 <div className={classes.mainFishesBlockImg}>
                                     <img className={classes[animation]} src={url} alt="fish"/>
@@ -66,7 +67,7 @@ const Main = () => {
                                 <h2 className={classes.mainFishesPriceTitle}>USD ${price}</h2>
                                 <p className={classes.mainFishesPriceText}>100000 LISTINGS</p>
                             </div>
-                        </div>
+                        </NavLink>
                         )
                     }
                 )}
