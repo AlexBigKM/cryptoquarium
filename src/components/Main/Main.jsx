@@ -21,7 +21,6 @@ const Main = () => {
         // setLocal(Data.filter((fish) => fish.name.toLowerCase().includes(term.toLowerCase())));
     };
 
-    log(state.fishCards);
     return (
         <main className={classes.main}>
             <div className={classes.mainBar}>

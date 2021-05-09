@@ -60,8 +60,8 @@ const DataProvider = (props) => {
     };
 
     useEffect(() => {
-        const { nftContract, marketplaceContract, selectedAccountAddress } = state;
-        if (!nftContract || !selectedAccountAddress || !marketplaceContract) {
+        const { nftContract, marketplaceContract } = state;
+        if (!nftContract || !marketplaceContract) {
             log('No address!');
             return;
         }

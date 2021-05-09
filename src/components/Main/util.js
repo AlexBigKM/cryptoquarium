@@ -26,8 +26,8 @@ export const loadDataForLotByIndex = async (index, animationClass, state) => {
         price,
         seller,
         priceEth,
-        imgUrl: 'https://cryptoquarium.netlify.app/logo192.png',
-        imgBigUrl: 'https://cryptoquarium.netlify.app/logo192.png',
+        imgUrl: `${fishUri}/fish.png`,
+        imgBigUrl: `${fishUri}/fishBig.png`,
         animationClass,
     };
 };
