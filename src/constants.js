@@ -1,6 +1,6 @@
-import { NFTAbi, MarketplaceAbi } from "./config";
+import { MarketplaceAbi, NFTAbi } from './config';
 
-export const DEBUG_MODE = process.env.REACT_APP_DEBUG_MODE === "1";
+export const DEBUG_MODE = process.env.REACT_APP_DEBUG_MODE === '1';
 export const NETWORK_TYPE = process.env.REACT_APP_NETWORK_TYPE;
 export const FALLBACK_PROVIDER_URL = process.env.REACT_APP_INFURA_URL;
 
@@ -20,4 +20,35 @@ export const ROUTES = {
     FISH_PAGE: '/fishpage/:id',
     CONTACT: '/contact',
     FAQ: '/faq',
-}
+};
+
+export const ERROR_MSG = {
+    COMMON: 'Unexpected error happened!',
+    METAMASK_IS_NOT_INSTALLED: 'Metamask is not installed!',
+    NO_CONNECTION: 'You have no connected account!',
+    COULD_NOT_LOAD_DATA: 'Could not load data!',
+    COULD_NOT_LOAD_DATA_CARDS: 'Could not data for fish cards!',
+    INCORRECT_NETWORK: 'Please switch to Kovan network first',
+};
+
+export const ACTION_TYPES = {
+    UPDATE_STATE: 'UPDATE_STATE',
+    SET_ACCOUNT: 'SET_ACCOUNT',
+    SET_CONTRACT_INSTANCES: 'SET_CONTRACT_INSTANCES',
+    SET_FISH_CARDS: 'SET_FISH_CARDS',
+};
+
+export const ANIMATIONS = [
+    'animationFive',
+    'animationTen',
+    'animationFour',
+    'animationThree',
+    'animationEleven',
+    'animationSix',
+    'animationTwo',
+    'animationEight',
+    'animationNine',
+    'fishPicture',
+    'animationSeven',
+    'animationTwelve',
+];
