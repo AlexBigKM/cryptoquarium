@@ -199,7 +199,11 @@ const FishPage = () => {
                         <div key={fish.fishId} className={classes.mainFishes}>
                             <div className={classes.mainFishesBlock}>
                                 <div className={classes.mainFishesBlockImg}>
-                                    <img className={fish.animate} src={fish.imgUrl} alt={fish.fishName} />
+                                    <img
+                                        className={classes[fish.animationClass]}
+                                        src={fish.imgUrl}
+                                        alt={fish.fishName}
+                                    />
                                 </div>
                                 <h2 className={classes.mainFishesTitle}>{fish.fishName}</h2>
                                 <p className={classes.mainFishesTitleText}>001/100 EDITION</p>
