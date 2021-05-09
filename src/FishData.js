@@ -119,19 +119,5 @@ const fish = [
             "price" : 6500,
             "animation": "animationTwelve"
         }
-        // {
-        //     "id" : 13,
-        //     "name" : "Marta",
-        //     "url": fishOne,
-        //     "price" : 2200,
-        //     "animation": "animationTwo"
-        // },
-        // {
-        //     "id" : 14,
-        //     "name" : "Jolie",
-        //     "url": fishTwo,
-        //     "price" : 7100,
-        //     "animation": "animationTen"
-        // }
     ]
   export default fish
