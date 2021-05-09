@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import Container from '@material-ui/core/Container';
-// import axios from 'axios'
 import Data from '../../FishData.js';
 
 import { useStyles } from '../../style.js';
@@ -9,6 +8,8 @@ import viewIcon from '../../assets/img/view-icon.png';
 import sortIcon from '../../assets/img/sort-icon.png';
 import { useAppState } from '../../app-state';
 import { log } from '../../util/helpers';
+import { generatePath } from 'react-router-dom';
+import { ROUTES } from '../../constants';
 
 const Main = () => {
     const { state, actions } = useAppState();
@@ -32,11 +33,33 @@ const Main = () => {
     }, [state.nftContract]);
 
     useEffect(() => {
-        const { nftContract, selectedAccountAddress } = state;
-        if (!nftContract || !selectedAccountAddress) {
+        const { nftContract, marketplaceContract, selectedAccountAddress } = state;
+        if (!nftContract || !selectedAccountAddress || !marketplaceContract) {
             log('No address!');
             return;
         }
+
+        marketplaceContract.methods
+            .totalLots()
+            .call()
+            .then((lotsNumber) => {
+                log('totalLots: ', lotsNumber);
+
+                for (let i = 0; i < lotsNumber; i++) {
+                    marketplaceContract.methods
+                        .lots(i)
+                        .call()
+                        .then((res) => {
+                            log('lots: ', res);
+                        })
+                        .catch((err) => {
+                            log('lots err: ', err);
+                        });
+                }
+            })
+            .catch((err) => {
+                log('totalLots err: ', err);
+            });
 
         nftContract.methods
             .balanceOf(selectedAccountAddress)
@@ -76,7 +99,7 @@ const Main = () => {
                             <img className={classes.mainBarItemImg} src={sortIcon} alt="sort" />
                         </a>
                         <a className={classes.mainBarItem} href="#">
-                            <img img className={classes.mainBarItemImg} src={viewIcon} alt="view" />
+                            <img className={classes.mainBarItemImg} src={viewIcon} alt="view" />
                         </a>
                         <form className={classes.mainForm}>
                             <input
@@ -87,7 +110,7 @@ const Main = () => {
                                 list="search"
                                 name="search"
                                 placeholder="SEARCH BY ARTISTS & AQUATIC CREATURES"
-                                autocomplete="off"
+                                autoComplete="off"
                             />
                             <button onClick={searchClick} className={classes.mainFormBtn} type="submit">
                                 Search
@@ -108,7 +131,13 @@ const Main = () => {
                 <div className={classes.fishMarket}>
                     {local.map(({ name, url, price, id, animation }) => {
                         return (
-                            <NavLink to={`/fishpage/${id}`} key={id} className={classes.mainFishes}>
+                            <NavLink
+                                to={generatePath(ROUTES.FISH_PAGE, {
+                                    id,
+                                })}
+                                key={id}
+                                className={classes.mainFishes}
+                            >
                                 <div className={classes.mainFishesBlock}>
                                     <div className={classes.mainFishesBlockImg}>
                                         <img className={classes[animation]} src={url} alt="fish" />
