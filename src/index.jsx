@@ -10,22 +10,20 @@ import MetamaskAccountDetector from './providers/MetamaskAccountDetector';
 import DataProvider from './providers/DataProvider';
 
 ReactDOM.render(
-    <React.StrictMode>
-        <ThemeProvider theme={theme}>
-            <SnackbarProvider
-                maxSnack={2}
-                autoHideDuration={2000}
-                anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-            >
-                <ContextProvider>
-                    <MetamaskAccountDetector>
-                        <DataProvider>
-                            <App />
-                        </DataProvider>
-                    </MetamaskAccountDetector>
-                </ContextProvider>
-            </SnackbarProvider>
-        </ThemeProvider>
-    </React.StrictMode>,
+    <ThemeProvider theme={theme}>
+        <SnackbarProvider
+            maxSnack={2}
+            autoHideDuration={2000}
+            anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+        >
+            <ContextProvider>
+                <MetamaskAccountDetector>
+                    <DataProvider>
+                        <App />
+                    </DataProvider>
+                </MetamaskAccountDetector>
+            </ContextProvider>
+        </SnackbarProvider>
+    </ThemeProvider>,
     document.getElementById('root'),
 );
