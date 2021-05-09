@@ -1,87 +1,27 @@
-import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useState } from 'react';
+import { generatePath, NavLink } from 'react-router-dom';
 import Container from '@material-ui/core/Container';
-import Data from '../../FishData.js';
 
 import { useStyles } from '../../style.js';
 import viewIcon from '../../assets/img/view-icon.png';
 import sortIcon from '../../assets/img/sort-icon.png';
 import { useAppState } from '../../app-state';
 import { log } from '../../util/helpers';
-import { generatePath } from 'react-router-dom';
 import { ROUTES } from '../../constants';
 
 const Main = () => {
     const { state, actions } = useAppState();
 
-    useEffect(() => {
-        const { nftContract } = state;
-        if (!nftContract) {
-            log('No nft instance!');
-            return;
-        }
-
-        nftContract.methods
-            .totalSupply()
-            .call()
-            .then((res) => {
-                log('totalSupply: ', res);
-            })
-            .catch((err) => {
-                log('totalSupply err: ', err);
-            });
-    }, [state.nftContract]);
-
-    useEffect(() => {
-        const { nftContract, marketplaceContract, selectedAccountAddress } = state;
-        if (!nftContract || !selectedAccountAddress || !marketplaceContract) {
-            log('No address!');
-            return;
-        }
-
-        marketplaceContract.methods
-            .totalLots()
-            .call()
-            .then((lotsNumber) => {
-                log('totalLots: ', lotsNumber);
-
-                for (let i = 0; i < lotsNumber; i++) {
-                    marketplaceContract.methods
-                        .lots(i)
-                        .call()
-                        .then((res) => {
-                            log('lots: ', res);
-                        })
-                        .catch((err) => {
-                            log('lots err: ', err);
-                        });
-                }
-            })
-            .catch((err) => {
-                log('totalLots err: ', err);
-            });
-
-        nftContract.methods
-            .balanceOf(selectedAccountAddress)
-            .call()
-            .then((res) => {
-                log('balanceOf: ', res);
-            })
-            .catch((err) => {
-                log('balanceOf err: ', err);
-            });
-    }, [state.selectedAccountAddress, state.nftContract]);
-
     const classes = useStyles();
 
     const [term, setTerm] = useState('');
-    const [local, setLocal] = useState(Data);
 
     const searchClick = (event) => {
         event.preventDefault();
-        setLocal(Data.filter((fish) => fish.name.toLowerCase().includes(term.toLowerCase())));
+        // setLocal(Data.filter((fish) => fish.name.toLowerCase().includes(term.toLowerCase())));
     };
 
+    log(state.fishCards);
     return (
         <main className={classes.main}>
             <div className={classes.mainBar}>
@@ -129,28 +69,30 @@ const Main = () => {
             </div>
             <Container maxWidth="lg">
                 <div className={classes.fishMarket}>
-                    {local.map(({ name, url, price, id, animation }) => {
-                        return (
-                            <NavLink
-                                to={generatePath(ROUTES.FISH_PAGE, {
-                                    id,
-                                })}
-                                key={id}
-                                className={classes.mainFishes}
-                            >
-                                <div className={classes.mainFishesBlock}>
-                                    <div className={classes.mainFishesBlockImg}>
-                                        <img className={classes[animation]} src={url} alt="fish" />
-                                    </div>
-                                    <h2 className={classes.mainFishesTitle}>{name}</h2>
-                                    <p className={classes.mainFishesTitleText}>001/100 EDITION</p>
-                                    <p className={classes.mainFishesPriceText}>LOWEST ASK</p>
-                                    <h2 className={classes.mainFishesPriceTitle}>USD ${price}</h2>
-                                    <p className={classes.mainFishesPriceText}>100000 LISTINGS</p>
+                    {state.fishCards.map((fish) => (
+                        <NavLink
+                            to={generatePath(ROUTES.FISH_PAGE, { id: fish.fishId })}
+                            key={fish.fishId}
+                            className={classes.mainFishes}
+                        >
+                            <div className={classes.mainFishesBlock}>
+                                <div className={classes.mainFishesBlockImg}>
+                                    <img
+                                        className={classes[fish.animationClass]}
+                                        src={fish.imgUrl}
+                                        alt={fish.fishName}
+                                    />
                                 </div>
-                            </NavLink>
-                        );
-                    })}
+                                <h2 className={classes.mainFishesTitle}>{fish.fishName}</h2>
+                                <p className={classes.mainFishesTitleText}>001/100 EDITION</p>
+                                <p className={classes.mainFishesPriceText}>LOWEST ASK</p>
+                                <h2 className={classes.mainFishesPriceTitle}>ETH {fish.priceEth}</h2>
+                                {/* TODO: Should be soon! */}
+                                {/*<h2 className={classes.mainFishesPriceTitle}>USD ${price}</h2>*/}
+                                <p className={classes.mainFishesPriceText}>100000 LISTINGS</p>
+                            </div>
+                        </NavLink>
+                    ))}
                 </div>
             </Container>
         </main>

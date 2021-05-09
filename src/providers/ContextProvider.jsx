@@ -1,5 +1,6 @@
 import React, { useReducer } from 'react';
 import { AppContext, appInitialState, appStateReducer } from '../app-state';
+import { ACTION_TYPES } from '../constants';
 
 /**
  * @typedef ContractInstances
@@ -9,48 +10,55 @@ import { AppContext, appInitialState, appStateReducer } from '../app-state';
  */
 
 const ContextProvider = (props) => {
-  const [state, dispatch] = useReducer(appStateReducer, appInitialState);
+    const [state, dispatch] = useReducer(appStateReducer, appInitialState);
 
-  const updateState = (changedState) => {
-    dispatch({
-      type: 'UPDATE_STATE',
-      payload: changedState,
-    });
-  };
+    const updateState = (changedState) => {
+        dispatch({
+            type: ACTION_TYPES.UPDATE_STATE,
+            payload: changedState,
+        });
+    };
 
-  /** @param {string} address */
-  const setAccount = (address) => {
-    dispatch({
-      type: 'SET_ACCOUNT',
-      payload: address,
-    });
-  };
+    /** @param {string} address */
+    const setAccount = (address) => {
+        dispatch({
+            type: ACTION_TYPES.SET_ACCOUNT,
+            payload: address,
+        });
+    };
 
-  /**
-   * @param {ContractInstances} instances
-   */
-  const setContractInstances = (instances) => {
-    dispatch({
-      type: 'SET_CONTRACT_INSTANCES',
-      payload: instances,
-    });
-  };
+    /** @param {ContractInstances} instances */
+    const setContractInstances = (instances) => {
+        dispatch({
+            type: ACTION_TYPES.SET_CONTRACT_INSTANCES,
+            payload: instances,
+        });
+    };
 
-  return (
-    <AppContext.Provider
-      value={{
-        state,
-        dispatch,
-        actions: {
-          updateState,
-          setAccount,
-          setContractInstances,
-        },
-      }}
-    >
-      {props.children}
-    </AppContext.Provider>
-  );
+    /** @param {FishCard[]} cards */
+    const setFishCards = (cards) => {
+        dispatch({
+            type: ACTION_TYPES.SET_FISH_CARDS,
+            payload: cards,
+        });
+    };
+
+    return (
+        <AppContext.Provider
+            value={{
+                state,
+                dispatch,
+                actions: {
+                    updateState,
+                    setAccount,
+                    setContractInstances,
+                    setFishCards,
+                },
+            }}
+        >
+            {props.children}
+        </AppContext.Provider>
+    );
 };
 
 export default ContextProvider;
