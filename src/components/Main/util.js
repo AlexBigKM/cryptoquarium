@@ -42,6 +42,7 @@ export async function loadDataForLots(state) {
     const promises = [];
 
     log('Lots amount: ', lotsAmount);
+    const animationsLength = ANIMATIONS.length - 1;
     let animationCounter = 0;
     for (let fishIndex = 0; fishIndex < lotsAmount; fishIndex++) {
         const animationClass = ANIMATIONS[animationCounter];
@@ -54,7 +55,7 @@ export async function loadDataForLots(state) {
             }
         });
 
-        if (animationCounter === ANIMATIONS.length) {
+        if (animationCounter === animationsLength) {
             animationCounter = 0;
         } else {
             animationCounter++;
