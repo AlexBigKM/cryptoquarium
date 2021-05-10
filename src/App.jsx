@@ -9,6 +9,7 @@ import { useStyles } from './style.js';
 import Main from './components/Main/Main';
 import './App.css';
 import { ROUTES } from './constants';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
     const classes = useStyles();
@@ -17,6 +18,7 @@ function App() {
         <Router>
             <div className="App">
                 <Header />
+                <ScrollToTop />
                 <div className={classes.wrapper}>
                     <Route exact path={ROUTES.HOME} component={Main} />
                     <Route path={ROUTES.MAIN} component={Main} />
