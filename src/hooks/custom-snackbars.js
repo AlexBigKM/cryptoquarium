@@ -19,8 +19,9 @@ export function useCustomSnackbar() {
         }
     };
 
-    const showError = (msgType = ERROR_MSG.COMMON) => {
-        enqueueSnackbar(ERROR_MSG[msgType], { variant: 'error' });
+    const showError = (msgType = ERROR_MSG.COMMON, error = null) => {
+        enqueueSnackbar(msgType, { variant: 'error' });
+        error && console.error(msgType, error);
     };
 
     return {

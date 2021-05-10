@@ -14,6 +14,7 @@ import { ACTION_TYPES } from './constants';
  * @property {string} imgUrl
  * @property {string} imgBigUrl
  * @property {string} animationClass
+ * @property {string|null} fishArtist - Is null by default, the record should be updated on fish page.
  */
 
 /**
