@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useStyles } from '../../style.js';
-import { useParams } from 'react-router-dom';
+import { generatePath, NavLink, useParams } from 'react-router-dom';
 import Container from '@material-ui/core/Container';
 
 import iconTable from '../../assets/img/icontable.png';
 import { useAppState } from '../../app-state';
 import { useCustomSnackbar } from '../../hooks/custom-snackbars';
+import { ROUTES } from '../../constants';
 
 const FishPage = () => {
     const { state, actions } = useAppState();
@@ -196,10 +197,17 @@ const FishPage = () => {
                 <h2 className={classes.marketTableTitle}>MORE AQUATIC CREATURES</h2>
                 <div className={classes.aquaCreatures}>
                     {otherFishCards.map((fish) => (
-                        <div key={fish.fishId} className={classes.mainFishes}>
+                        <NavLink
+                            to={generatePath(ROUTES.FISH_PAGE, { id: fish.fishId })}
+                            key={fish.fishId}
+                            className={classes.mainFishes}>
                             <div className={classes.mainFishesBlock}>
                                 <div className={classes.mainFishesBlockImg}>
-                                    <img className={fish.animate} src={fish.imgUrl} alt={fish.fishName} />
+                                    <img
+                                        className={classes[fish.animationClass]}
+                                        src={fish.imgUrl}
+                                        alt={fish.fishName}
+                                    />
                                 </div>
                                 <h2 className={classes.mainFishesTitle}>{fish.fishName}</h2>
                                 <p className={classes.mainFishesTitleText}>001/100 EDITION</p>
@@ -208,7 +216,7 @@ const FishPage = () => {
                                 {/*<h2 className={classes.mainFishesPriceTitle}>USD $000</h2>*/}
                                 <p className={classes.mainFishesPriceText}>100000 LISTINGS</p>
                             </div>
-                        </div>
+                        </NavLink>
                     ))}
                 </div>
             </Container>
