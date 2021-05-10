@@ -150,19 +150,19 @@
   {
     "inputs": [
       {
-        "internalType": "uint256",
-        "name": "fishId",
-        "type": "uint256"
+        "internalType": "string",
+        "name": "name",
+        "type": "string"
       }
     ],
-    "name": "artist",
+    "name": "artists",
     "outputs": [
       {
         "components": [
           {
-            "internalType": "bytes32",
+            "internalType": "string",
             "name": "name",
-            "type": "bytes32"
+            "type": "string"
           },
           {
             "internalType": "address payable",
@@ -210,6 +210,25 @@
         "type": "uint256"
       }
     ],
+    "name": "fishArtist",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "fishId",
+        "type": "uint256"
+      }
+    ],
     "name": "fishLocked",
     "outputs": [
       {
@@ -234,6 +253,44 @@
       {
         "internalType": "string",
         "name": "name",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "fish_artist",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "fish_name",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
         "type": "string"
       }
     ],

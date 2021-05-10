@@ -2,30 +2,80 @@ import React, { useEffect, useState } from 'react';
 import { useStyles } from '../../style.js';
 import { generatePath, NavLink, useParams } from 'react-router-dom';
 import Container from '@material-ui/core/Container';
-
 import iconTable from '../../assets/img/icontable.png';
 import { useAppState } from '../../app-state';
 import { useCustomSnackbar } from '../../hooks/custom-snackbars';
 import { ROUTES } from '../../constants';
+import { getRandInt } from '../../util/helpers';
+import clsx from 'clsx';
 
 const FishPage = () => {
     const { state, actions } = useAppState();
-    const [fish, setFish] = useState(null);
+    const [fish, setFish] = useState(/** @type {FishCard|null} */ null);
     const [otherFishCards, setOtherFishCards] = useState([]);
+    const [isBuyBtnDisabled, setIsBuyBtnDisabled] = useState(true);
 
     const classes = useStyles();
     const params = useParams();
-    const { showError, ERROR_MSG } = useCustomSnackbar();
+    const { enqueueSnackbar, closeSnackbar, showError, showSuccess, ERROR_MSG } = useCustomSnackbar();
 
     useEffect(() => {
         if (fish || state.fishCards.length === 0) return;
-        const singleFish = state.fishCards.find((fish) => fish.fishId === params.id);
-        if (singleFish) {
-            setFish(singleFish);
-            const filteredCards = state.fishCards.filter((fish) => fish.fishId !== params.id);
-            setOtherFishCards(filteredCards.slice(0, 4));
-        }
+        const fishIndex = state.fishCards.findIndex((fish) => fish.fishId === params.id);
+        if (fishIndex < 0) return;
+        const foundFish = state.fishCards[fishIndex];
+
+        setFish(foundFish);
+        setOtherFishCards(getRandomFish(foundFish.fishId));
     }, [state.fishCards.length]);
+
+    useEffect(() => {
+        if (state.isCorrectNetwork && state.selectedAccountAddress) {
+            setIsBuyBtnDisabled(false);
+        } else {
+            setIsBuyBtnDisabled(true);
+        }
+    }, [state.isCorrectNetwork, state.selectedAccountAddress]);
+
+    const getRandomFish = (fishIdToExclude, resultAmount = 4) => {
+        const randomFishArr = [];
+
+        while (randomFishArr.length < resultAmount) {
+            const randIndex = getRandInt(0, state.fishCards.length - 1);
+            const fish = state.fishCards[randIndex];
+            const isFishAdded = randomFishArr.some(({ fishId }) => fishId === fish.fishId);
+
+            if (fish.fishId !== fishIdToExclude && !isFishAdded) {
+                randomFishArr.push(fish);
+            }
+        }
+
+        return randomFishArr;
+    };
+
+    const startPaymentProcess = async () => {
+        setIsBuyBtnDisabled(true);
+        const { marketplaceContract, selectedAccountAddress } = state;
+        const { fishId, price } = fish;
+        const snackbarKey = enqueueSnackbar('Processing...', {
+            variant: 'info',
+            persist: true,
+        });
+
+        try {
+            await marketplaceContract.methods.buy(fishId).send({
+                from: selectedAccountAddress,
+                value: price,
+            });
+
+            closeSnackbar(snackbarKey);
+            showSuccess('Payment successful!');
+        } catch (error) {
+            closeSnackbar(snackbarKey);
+            showError(ERROR_MSG.COULD_NOT_BUY_FISH, error);
+        }
+        setIsBuyBtnDisabled(false);
+    };
 
     return (
         <div className={classes.market}>
@@ -38,17 +88,24 @@ const FishPage = () => {
                             </div>
                             <div className={classes.marketItemDescr}>
                                 <h1 className={classes.marketItemTitle}>{fish.fishName}</h1>
-                                <h2 className={classes.marketItemTitleItem}>by David Welker</h2>
+                                <h2 className={classes.marketItemTitleItem}>by {fish.fishArtist}</h2>
                                 <span className={classes.marketItemLine}></span>
                                 <p className={classes.marketItemDescrText}>EDITION SIZE</p>
                                 <span className={classes.marketItemDescrTitle}>500</span>
                                 <p className={classes.marketItemDescrText}>SOLD BY</p>
                                 <span className={classes.marketItemDescrTitle}>89 COLLECTORS</span>
                                 <p className={classes.marketItemDescrText}>LOWEST ASK </p>
-                                <span className={classes.marketItemDescrTitle}>USD ${fish.price}</span>
+                                <span className={classes.marketItemDescrTitle}>ETH {fish.priceEth}</span>
                                 <p className={classes.marketItemDescrText}>TOP SALE </p>
                                 <span className={classes.marketItemDescrTitle}>USD $10000</span>
-                                <button className={classes.marketItemBtn} type="submit">
+                                <button
+                                    className={clsx(classes.marketItemBtn, {
+                                        [classes.enabledBuyBtn]: !isBuyBtnDisabled,
+                                        [classes.disabledBuyBtn]: isBuyBtnDisabled,
+                                    })}
+                                    disabled={isBuyBtnDisabled}
+                                    onClick={startPaymentProcess}
+                                >
                                     SELECT & BUY
                                 </button>
                             </div>
@@ -212,8 +269,7 @@ const FishPage = () => {
                                 <h2 className={classes.mainFishesTitle}>{fish.fishName}</h2>
                                 <p className={classes.mainFishesTitleText}>001/100 EDITION</p>
                                 <p className={classes.mainFishesPriceText}>LOWEST ASK</p>
-                                <h2 className={classes.mainFishesPriceTitle}>ETH ${fish.priceEth}</h2>
-                                {/*<h2 className={classes.mainFishesPriceTitle}>USD $000</h2>*/}
+                                <h2 className={classes.mainFishesPriceTitle}>ETH {fish.priceEth}</h2>
                                 <p className={classes.mainFishesPriceText}>100000 LISTINGS</p>
                             </div>
                         </NavLink>

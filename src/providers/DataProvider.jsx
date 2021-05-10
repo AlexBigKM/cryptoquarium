@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useAppState } from '../app-state';
 import { initializeContracts, log } from '../util/helpers';
-import { FALLBACK_PROVIDER_URL } from '../constants';
+import { CHAIN_ID, FALLBACK_PROVIDER_URL } from '../constants';
 import { loadDataForLots } from '../components/Main/util';
 import { useCustomSnackbar } from '../hooks/custom-snackbars';
 
@@ -24,14 +24,8 @@ const DataProvider = (props) => {
         };
     }, [state.web3Provider]);
 
-    // useEffect(() => {
-    //   if (state?.masterPoolInstance?.options?.address && state.isCorrectNetwork) {
-    //     log('Initialize pools');
-    //   }
-    // }, [state.masterPoolInstance?.options?.address, state.selectedAccountAddress, state.isCorrectNetwork]);
-
     const createContractInstances = () => {
-        const instances = initializeContracts(FALLBACK_PROVIDER_URL, false);
+        const instances = initializeContracts(FALLBACK_PROVIDER_URL, !state.isCorrectNetwork);
 
         actions.setContractInstances(instances);
     };
@@ -46,13 +40,13 @@ const DataProvider = (props) => {
         const timeoutId = setInterval(() => checkNetworkType(), TIMEOUT_IN_MILLIS);
 
         const checkNetworkType = () => {
-            web3Provider.eth.net.getId().then((_chainId) => {
-                // if (chainId !== parseInt(CHAIN_ID)) {
-                //   actions.updateState({ isCorrectNetwork: false });
-                // } else {
-                clearInterval(timeoutId);
-                actions.updateState({ isCorrectNetwork: true });
-                // }
+            web3Provider.eth.net.getId().then((chainId) => {
+                if (chainId !== parseInt(CHAIN_ID)) {
+                    actions.updateState({ isCorrectNetwork: false });
+                } else {
+                    clearInterval(timeoutId);
+                    actions.updateState({ isCorrectNetwork: true });
+                }
             });
         };
 
