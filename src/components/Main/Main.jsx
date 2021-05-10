@@ -6,7 +6,6 @@ import { useStyles } from '../../style.js';
 import viewIcon from '../../assets/img/view-icon.png';
 import sortIcon from '../../assets/img/sort-icon.png';
 import { useAppState } from '../../app-state';
-import { log } from '../../util/helpers';
 import { ROUTES } from '../../constants';
 
 const Main = () => {
