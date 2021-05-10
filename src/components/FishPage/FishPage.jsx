@@ -2,21 +2,21 @@ import React, { useEffect, useState } from 'react';
 import { useStyles } from '../../style.js';
 import { useParams } from 'react-router-dom';
 import Container from '@material-ui/core/Container';
-
 import iconTable from '../../assets/img/icontable.png';
 import { useAppState } from '../../app-state';
 import { useCustomSnackbar } from '../../hooks/custom-snackbars';
 import { getRandInt } from '../../util/helpers';
+import clsx from 'clsx';
 
 const FishPage = () => {
     const { state, actions } = useAppState();
-    const [fish, setFish] = useState(null);
+    const [fish, setFish] = useState(/** @type {FishCard|null} */ null);
     const [otherFishCards, setOtherFishCards] = useState([]);
     const [isBuyBtnDisabled, setIsBuyBtnDisabled] = useState(true);
 
     const classes = useStyles();
     const params = useParams();
-    const { showError, ERROR_MSG } = useCustomSnackbar();
+    const { enqueueSnackbar, closeSnackbar, showError, showSuccess, ERROR_MSG } = useCustomSnackbar();
 
     useEffect(() => {
         if (fish || state.fishCards.length === 0) return;
@@ -29,10 +29,10 @@ const FishPage = () => {
     }, [state.fishCards.length]);
 
     useEffect(() => {
-        if (state.isCorrectNetwork && !!state.selectedAccountAddress) {
-            setIsBuyBtnDisabled(true);
-        } else {
+        if (state.isCorrectNetwork && state.selectedAccountAddress) {
             setIsBuyBtnDisabled(false);
+        } else {
+            setIsBuyBtnDisabled(true);
         }
     }, [state.isCorrectNetwork, state.selectedAccountAddress]);
 
@@ -42,9 +42,9 @@ const FishPage = () => {
         while (randomFishArr.length < resultAmount) {
             const randIndex = getRandInt(0, state.fishCards.length - 1);
             const fish = state.fishCards[randIndex];
-            const isFishAdded = randomFishArr.some(({ id }) => id === fish.fishId);
+            const isFishAdded = randomFishArr.some(({ fishId }) => fishId === fish.fishId);
 
-            if (fish.fishId !== fishIdToExclude || !isFishAdded) {
+            if (fish.fishId !== fishIdToExclude && !isFishAdded) {
                 randomFishArr.push(fish);
             }
         }
@@ -52,7 +52,29 @@ const FishPage = () => {
         return randomFishArr;
     };
 
-    const byFish = () => {};
+    const startPaymentProcess = async () => {
+        setIsBuyBtnDisabled(true);
+        const { marketplaceContract, selectedAccountAddress } = state;
+        const { fishId, price } = fish;
+        const snackbarKey = enqueueSnackbar('Processing...', {
+            variant: 'info',
+            persist: true,
+        });
+
+        try {
+            await marketplaceContract.methods.buy(fishId).send({
+                from: selectedAccountAddress,
+                value: price,
+            });
+
+            closeSnackbar(snackbarKey);
+            showSuccess('Payment successful!');
+        } catch (error) {
+            closeSnackbar(snackbarKey);
+            showError(ERROR_MSG.COULD_NOT_BUY_FISH, error);
+        }
+        setIsBuyBtnDisabled(false);
+    };
 
     return (
         <div className={classes.market}>
@@ -75,7 +97,14 @@ const FishPage = () => {
                                 <span className={classes.marketItemDescrTitle}>ETH {fish.priceEth}</span>
                                 <p className={classes.marketItemDescrText}>TOP SALE </p>
                                 <span className={classes.marketItemDescrTitle}>USD $10000</span>
-                                <button className={classes.marketItemBtn} disabled={isBuyBtnDisabled} onClick={byFish}>
+                                <button
+                                    className={clsx(classes.marketItemBtn, {
+                                        [classes.enabledBuyBtn]: !isBuyBtnDisabled,
+                                        [classes.disabledBuyBtn]: isBuyBtnDisabled,
+                                    })}
+                                    disabled={isBuyBtnDisabled}
+                                    onClick={startPaymentProcess}
+                                >
                                     SELECT & BUY
                                 </button>
                             </div>

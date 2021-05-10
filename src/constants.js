@@ -30,6 +30,7 @@ export const ERROR_MSG = {
     COULD_NOT_LOAD_DATA_CARDS: 'Could not data for fish cards!',
     INCORRECT_NETWORK: 'Please switch to Rinkeby network first',
     COULD_NOT_LOAD_FISH_AUTHOR: 'Could not load fish author!',
+    COULD_NOT_BUY_FISH: 'Could not buy fish!',
 };
 
 export const ACTION_TYPES = {

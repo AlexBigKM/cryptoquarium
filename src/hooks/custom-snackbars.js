@@ -5,7 +5,7 @@ import { ERROR_MSG } from '../constants';
 
 export function useCustomSnackbar() {
     const { state } = useAppState();
-    const { enqueueSnackbar } = useSnackbar();
+    const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 
     const showConnectionError = () => {
         if (!MetaMaskOnboarding.isMetaMaskInstalled()) {
@@ -24,9 +24,16 @@ export function useCustomSnackbar() {
         error && console.error(msgType, error);
     };
 
+    const showSuccess = (msgType) => {
+        enqueueSnackbar(msgType, { variant: 'success' });
+    }
+
     return {
+        enqueueSnackbar,
+        closeSnackbar,
         showError,
         showConnectionError,
+        showSuccess,
         ERROR_MSG,
     };
 }
