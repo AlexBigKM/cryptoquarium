@@ -13,9 +13,10 @@ export const loadDataForLotByIndex = async (index, animationClass, state) => {
 
     const { fishId, feeAmount, price, seller } = await marketplaceContract.methods.lots(index).call();
     const priceEth = web3Provider.utils.fromWei(price, 'ether');
-    const [fishName, fishUri] = await Promise.all([
+    const [fishName, fishUri, fishArtist] = await Promise.all([
         nftContract.methods.fishName(fishId).call(),
         nftContract.methods.tokenURI(fishId).call(),
+        nftContract.methods.fishArtist(fishId).call(),
     ]);
 
     return {
@@ -29,6 +30,7 @@ export const loadDataForLotByIndex = async (index, animationClass, state) => {
         imgUrl: `${fishUri}/fish.png`,
         imgBigUrl: `${fishUri}/fishBig.png`,
         animationClass,
+        fishArtist,
     };
 };
 

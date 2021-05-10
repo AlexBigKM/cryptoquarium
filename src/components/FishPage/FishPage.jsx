@@ -8,14 +8,6 @@ import { useAppState } from '../../app-state';
 import { useCustomSnackbar } from '../../hooks/custom-snackbars';
 import { getRandInt } from '../../util/helpers';
 
-/**
- * @param {string} fishId
- * @param {Contract} nftContract
- */
-function loadFishArtist(fishId, nftContract) {
-    return nftContract.methods.fishArtist(fishId).call();
-}
-
 const FishPage = () => {
     const { state, actions } = useAppState();
     const [fish, setFish] = useState(null);
@@ -31,21 +23,6 @@ const FishPage = () => {
         const fishIndex = state.fishCards.findIndex((fish) => fish.fishId === params.id);
         if (fishIndex < 0) return;
         const foundFish = state.fishCards[fishIndex];
-
-        if (!foundFish.fishArtist) {
-            loadFishArtist(foundFish.fishId, state.nftContract)
-                .then((fishArtist) => {
-                    foundFish.fishArtist = fishArtist;
-
-                    // Replace fish in global state.
-                    const newFishCards = [...state.fishCards];
-                    newFishCards.splice(fishIndex, 1, foundFish);
-                    actions.setFishCards(newFishCards);
-                })
-                .catch((err) => {
-                    showError(ERROR_MSG.COULD_NOT_LOAD_FISH_AUTHOR, err);
-                });
-        }
 
         setFish(foundFish);
         setOtherFishCards(getRandomFish(foundFish.fishId));
