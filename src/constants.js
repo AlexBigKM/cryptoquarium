@@ -28,7 +28,8 @@ export const ERROR_MSG = {
     NO_CONNECTION: 'You have no connected account!',
     COULD_NOT_LOAD_DATA: 'Could not load data!',
     COULD_NOT_LOAD_DATA_CARDS: 'Could not data for fish cards!',
-    INCORRECT_NETWORK: 'Please switch to Kovan network first',
+    INCORRECT_NETWORK: 'Please switch to Rinkeby network first',
+    COULD_NOT_LOAD_FISH_AUTHOR: 'Could not load fish author!',
 };
 
 export const ACTION_TYPES = {
