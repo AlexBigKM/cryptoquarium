@@ -5,6 +5,7 @@ import facebook from '../../assets/img/facebook.svg'
 import instagram from '../../assets/img/instagram.svg'
 import telegram from '../../assets/img/telegram.svg'
 import {useStyles} from "../../style.js"
+import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
     const classes = useStyles();
@@ -30,14 +31,14 @@ const Footer = () => {
                 <div className={classes.footerNav}>
                     <ul className={classes.footerMenu}>
                         <li className={classes.footerMenuItems}>
-                            <a className={classes.footerMenuItemsLink} href="#">
+                            <NavLink  to="/faq" className={classes.footerMenuItemsLink} href="#">
                                 FAQ
-                            </a>
+                            </NavLink>
                         </li>
                         <li className={classes.footerMenuItems}>
-                            <a className={classes.footerMenuItemsLink} href="#">
+                            <NavLink  to="/contact" className={classes.footerMenuItemsLink} href="#">
                                 CONTACT
-                            </a>
+                            </NavLink>
                         </li>
                         <li className={classes.footerMenuItems}>
                             <a className={classes.footerMenuItemsLink} href="#">

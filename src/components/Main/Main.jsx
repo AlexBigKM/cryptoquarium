@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { generatePath, NavLink } from 'react-router-dom';
 import Container from '@material-ui/core/Container';
 
@@ -7,6 +7,7 @@ import viewIcon from '../../assets/img/view-icon.png';
 import sortIcon from '../../assets/img/sort-icon.png';
 import { useAppState } from '../../app-state';
 import { ROUTES } from '../../constants';
+import { act } from '@testing-library/react';
 
 const Main = () => {
     const { state, actions } = useAppState();
@@ -14,10 +15,19 @@ const Main = () => {
     const classes = useStyles();
 
     const [term, setTerm] = useState('');
+    const [activeFilter, setActiveFilter] = useState(false);
+    const [fishData, setFishData] = useState([]);
+
+    useEffect(() => {
+        const data = term.length ? state.fishCards.filter((name) => name.fishName.toLowerCase().includes(term.toLowerCase())) : state.fishCards;
+        setFishData(data)
+    },[activeFilter])
+
+
 
     const searchClick = (event) => {
         event.preventDefault();
-        // setLocal(Data.filter((fish) => fish.name.toLowerCase().includes(term.toLowerCase())));
+        setActiveFilter(!activeFilter);
     };
 
     return (
@@ -67,7 +77,7 @@ const Main = () => {
             </div>
             <Container maxWidth="lg">
                 <div className={classes.fishMarket}>
-                    {state.fishCards.map((fish) => (
+                    {fishData.map((fish) => (
                         <NavLink
                             to={generatePath(ROUTES.FISH_PAGE, { id: fish.fishId })}
                             key={fish.fishId}
