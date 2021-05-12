@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useStyles } from '../../style.js';
-import { useParams } from 'react-router-dom';
+import { generatePath, NavLink, useParams } from 'react-router-dom';
 import Container from '@material-ui/core/Container';
 import iconTable from '../../assets/img/icontable.png';
 import { useAppState } from '../../app-state';
 import { useCustomSnackbar } from '../../hooks/custom-snackbars';
+import { ROUTES } from '../../constants';
 import { getRandInt } from '../../util/helpers';
 import clsx from 'clsx';
 
@@ -253,7 +254,10 @@ const FishPage = () => {
                 <h2 className={classes.marketTableTitle}>MORE AQUATIC CREATURES</h2>
                 <div className={classes.aquaCreatures}>
                     {otherFishCards.map((fish) => (
-                        <div key={fish.fishId} className={classes.mainFishes}>
+                        <NavLink
+                            to={generatePath(ROUTES.FISH_PAGE, { id: fish.fishId })}
+                            key={fish.fishId}
+                            className={classes.mainFishes}>
                             <div className={classes.mainFishesBlock}>
                                 <div className={classes.mainFishesBlockImg}>
                                     <img
@@ -268,7 +272,7 @@ const FishPage = () => {
                                 <h2 className={classes.mainFishesPriceTitle}>ETH {fish.priceEth}</h2>
                                 <p className={classes.mainFishesPriceText}>100000 LISTINGS</p>
                             </div>
-                        </div>
+                        </NavLink>
                     ))}
                 </div>
             </Container>
