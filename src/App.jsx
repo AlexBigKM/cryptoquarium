@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import FishPage from './components/FishPage/FishPage';
@@ -20,11 +20,15 @@ function App() {
                 <Header />
                 <ScrollToTop />
                 <div className={classes.wrapper}>
-                    <Route exact path={ROUTES.HOME} component={Main} />
-                    <Route path={ROUTES.MAIN} component={Main} />
-                    <Route path={ROUTES.FISH_PAGE} component={FishPage} />
-                    <Route path={ROUTES.CONTACT} component={Contact} />
-                    <Route path={ROUTES.FAQ} component={Faq} />
+                    <Switch>
+                        <Route exact path={ROUTES.HOME} component={Main}>
+                            <Redirect to={ROUTES.MAIN} />
+                        </Route>
+                        <Route path={ROUTES.MAIN} component={Main} />
+                        <Route path={ROUTES.FISH_PAGE} component={FishPage} />
+                        <Route path={ROUTES.CONTACT} component={Contact} />
+                        <Route path={ROUTES.FAQ} component={Faq} />
+                    </Switch>
                 </div>
                 <Footer />
             </div>

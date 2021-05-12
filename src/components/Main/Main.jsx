@@ -21,9 +21,8 @@ const Main = () => {
     useEffect(() => {
         const data = term.length ? state.fishCards.filter((name) => name.fishName.toLowerCase().includes(term.toLowerCase())) : state.fishCards;
         setFishData(data)
-    },[activeFilter])
-
-
+    },[activeFilter, state])
+    
 
     const searchClick = (event) => {
         event.preventDefault();
