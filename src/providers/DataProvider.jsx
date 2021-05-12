@@ -25,7 +25,7 @@ const DataProvider = (props) => {
     }, [state.web3Provider]);
 
     const createContractInstances = () => {
-        const instances = initializeContracts(FALLBACK_PROVIDER_URL, !state.isCorrectNetwork);
+        const instances = initializeContracts(FALLBACK_PROVIDER_URL, false);
 
         actions.setContractInstances(instances);
     };
