@@ -155,144 +155,144 @@ const FishPage = () => {
                     </>
                 )}
 
-                <div className={classes.tableBlock}>
-                    <h2 className={classes.marketTableTitle}>TOP SALES</h2>
-                    <table className={classes.marketTableTitle} frame="border" rules="all">
-                        <tr className={classes.tableTr}>
-                            <th>BUYER</th>
-                            <th>SALE PRICE</th>
-                            <th>EDITION NUMBER</th>
-                            <th>DATE / TIME</th>
-                            <th style={{ textAlign: 'right' }}>TX</th>
-                        </tr>
-                        <tr className={classes.tableTr}>
-                            <td>
-                                <span className={classes.tdAvatar}></span>WhipperSnapper
-                            </td>
-                            <td>
-                                $1000<span className={classes.topSale}>#1 Top Sale</span>
-                            </td>
-                            <td>1/500</td>
-                            <td>February 25, 2021 / 5:12 PM</td>
-                            <td style={{ textAlign: 'right' }}>
-                                <img src={iconTable} alt="icon" />
-                            </td>
-                        </tr>
-                        <tr className={classes.tableTr}>
-                            <td>
-                                <span className={classes.tdAvatar}></span>FinSanity
-                            </td>
-                            <td>
-                                $950<span className={classes.topSale}>#2 Top Sale</span>
-                            </td>
-                            <td>2/500</td>
-                            <td>March 5, 2021 / 3:00 PM</td>
-                            <td style={{ textAlign: 'right' }}>
-                                <img src={iconTable} alt="icon" />
-                            </td>
-                        </tr>
-                        <tr className={classes.tableTr}>
-                            <td>
-                                <span className={classes.tdAvatar}></span>Flipper
-                            </td>
-                            <td>
-                                $950<span className={classes.topSale}>#3 Top Sale</span>
-                            </td>
-                            <td>3/500</td>
-                            <td>January 3, 2021 / 1:20 PM</td>
-                            <td style={{ textAlign: 'right' }}>
-                                <img src={iconTable} alt="icon" />
-                            </td>
-                        </tr>
-                    </table>
-                    <h2 className={classes.marketTableTitle}>RECENT SALES</h2>
-                    <table className={classes.marketTableTitle} frame="border" rules="all">
-                        <tr>
-                            <th>BUYER</th>
-                            <th>SALE PRICE</th>
-                            <th>EDITION NUMBER</th>
-                            <th>DATE / TIME</th>
-                            <th style={{ textAlign: 'right' }}>TX</th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span className={classes.tdAvatar}></span>WhipperSnapper
-                            </td>
-                            <td>$1000</td>
-                            <td>1/500</td>
-                            <td>February 25, 2021 / 5:12 PM</td>
-                            <td style={{ textAlign: 'right' }}>
-                                <img src={iconTable} alt="icon" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span className={classes.tdAvatar}></span>FinSanity
-                            </td>
-                            <td>$950</td>
-                            <td>2/500</td>
-                            <td>March 5, 2021 / 3:00 PM</td>
-                            <td style={{ textAlign: 'right' }}>
-                                <img src={iconTable} alt="icon" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span className={classes.tdAvatar}></span>Flipper
-                            </td>
-                            <td>$950</td>
-                            <td>3/500</td>
-                            <td>January 3, 2021 / 1:20 PM</td>
-                            <td style={{ textAlign: 'right' }}>
-                                <img src={iconTable} alt="icon" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span className={classes.tdAvatar}></span>SebastianTheLobster
-                            </td>
-                            <td>$950</td>
-                            <td>3/500</td>
-                            <td>January 3, 2021 / 1:20 PM</td>
-                            <td style={{ textAlign: 'right' }}>
-                                <img src={iconTable} alt="icon" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span className={classes.tdAvatar}></span>BruceTheShark
-                            </td>
-                            <td>$950</td>
-                            <td>3/500</td>
-                            <td>January 3, 2021 / 1:20 PM</td>
-                            <td style={{ textAlign: 'right' }}>
-                                <img src={iconTable} alt="icon" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span className={classes.tdAvatar}></span>CuddleFish
-                            </td>
-                            <td>$950</td>
-                            <td>3/500</td>
-                            <td>January 3, 2021 / 1:20 PM</td>
-                            <td style={{ textAlign: 'right' }}>
-                                <img src={iconTable} alt="icon" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span className={classes.tdAvatar}></span>GillMan
-                            </td>
-                            <td>$950</td>
-                            <td>3/500</td>
-                            <td>January 3, 2021 / 1:20 PM</td>
-                            <td style={{ textAlign: 'right' }}>
-                                <img src={iconTable} alt="icon" />
-                            </td>
-                        </tr>
-                    </table>
-                </div>
+                {/*<div className={classes.tableBlock}>*/}
+                {/*    <h2 className={classes.marketTableTitle}>TOP SALES</h2>*/}
+                {/*    <table className={classes.marketTableTitle} frame="border" rules="all">*/}
+                {/*        <tr className={classes.tableTr}>*/}
+                {/*            <th>BUYER</th>*/}
+                {/*            <th>SALE PRICE</th>*/}
+                {/*            <th>EDITION NUMBER</th>*/}
+                {/*            <th>DATE / TIME</th>*/}
+                {/*            <th style={{ textAlign: 'right' }}>TX</th>*/}
+                {/*        </tr>*/}
+                {/*        <tr className={classes.tableTr}>*/}
+                {/*            <td>*/}
+                {/*                <span className={classes.tdAvatar}></span>WhipperSnapper*/}
+                {/*            </td>*/}
+                {/*            <td>*/}
+                {/*                $1000<span className={classes.topSale}>#1 Top Sale</span>*/}
+                {/*            </td>*/}
+                {/*            <td>1/500</td>*/}
+                {/*            <td>February 25, 2021 / 5:12 PM</td>*/}
+                {/*            <td style={{ textAlign: 'right' }}>*/}
+                {/*                <img src={iconTable} alt="icon" />*/}
+                {/*            </td>*/}
+                {/*        </tr>*/}
+                {/*        <tr className={classes.tableTr}>*/}
+                {/*            <td>*/}
+                {/*                <span className={classes.tdAvatar}></span>FinSanity*/}
+                {/*            </td>*/}
+                {/*            <td>*/}
+                {/*                $950<span className={classes.topSale}>#2 Top Sale</span>*/}
+                {/*            </td>*/}
+                {/*            <td>2/500</td>*/}
+                {/*            <td>March 5, 2021 / 3:00 PM</td>*/}
+                {/*            <td style={{ textAlign: 'right' }}>*/}
+                {/*                <img src={iconTable} alt="icon" />*/}
+                {/*            </td>*/}
+                {/*        </tr>*/}
+                {/*        <tr className={classes.tableTr}>*/}
+                {/*            <td>*/}
+                {/*                <span className={classes.tdAvatar}></span>Flipper*/}
+                {/*            </td>*/}
+                {/*            <td>*/}
+                {/*                $950<span className={classes.topSale}>#3 Top Sale</span>*/}
+                {/*            </td>*/}
+                {/*            <td>3/500</td>*/}
+                {/*            <td>January 3, 2021 / 1:20 PM</td>*/}
+                {/*            <td style={{ textAlign: 'right' }}>*/}
+                {/*                <img src={iconTable} alt="icon" />*/}
+                {/*            </td>*/}
+                {/*        </tr>*/}
+                {/*    </table>*/}
+                {/*    <h2 className={classes.marketTableTitle}>RECENT SALES</h2>*/}
+                {/*    <table className={classes.marketTableTitle} frame="border" rules="all">*/}
+                {/*        <tr>*/}
+                {/*            <th>BUYER</th>*/}
+                {/*            <th>SALE PRICE</th>*/}
+                {/*            <th>EDITION NUMBER</th>*/}
+                {/*            <th>DATE / TIME</th>*/}
+                {/*            <th style={{ textAlign: 'right' }}>TX</th>*/}
+                {/*        </tr>*/}
+                {/*        <tr>*/}
+                {/*            <td>*/}
+                {/*                <span className={classes.tdAvatar}></span>WhipperSnapper*/}
+                {/*            </td>*/}
+                {/*            <td>$1000</td>*/}
+                {/*            <td>1/500</td>*/}
+                {/*            <td>February 25, 2021 / 5:12 PM</td>*/}
+                {/*            <td style={{ textAlign: 'right' }}>*/}
+                {/*                <img src={iconTable} alt="icon" />*/}
+                {/*            </td>*/}
+                {/*        </tr>*/}
+                {/*        <tr>*/}
+                {/*            <td>*/}
+                {/*                <span className={classes.tdAvatar}></span>FinSanity*/}
+                {/*            </td>*/}
+                {/*            <td>$950</td>*/}
+                {/*            <td>2/500</td>*/}
+                {/*            <td>March 5, 2021 / 3:00 PM</td>*/}
+                {/*            <td style={{ textAlign: 'right' }}>*/}
+                {/*                <img src={iconTable} alt="icon" />*/}
+                {/*            </td>*/}
+                {/*        </tr>*/}
+                {/*        <tr>*/}
+                {/*            <td>*/}
+                {/*                <span className={classes.tdAvatar}></span>Flipper*/}
+                {/*            </td>*/}
+                {/*            <td>$950</td>*/}
+                {/*            <td>3/500</td>*/}
+                {/*            <td>January 3, 2021 / 1:20 PM</td>*/}
+                {/*            <td style={{ textAlign: 'right' }}>*/}
+                {/*                <img src={iconTable} alt="icon" />*/}
+                {/*            </td>*/}
+                {/*        </tr>*/}
+                {/*        <tr>*/}
+                {/*            <td>*/}
+                {/*                <span className={classes.tdAvatar}></span>SebastianTheLobster*/}
+                {/*            </td>*/}
+                {/*            <td>$950</td>*/}
+                {/*            <td>3/500</td>*/}
+                {/*            <td>January 3, 2021 / 1:20 PM</td>*/}
+                {/*            <td style={{ textAlign: 'right' }}>*/}
+                {/*                <img src={iconTable} alt="icon" />*/}
+                {/*            </td>*/}
+                {/*        </tr>*/}
+                {/*        <tr>*/}
+                {/*            <td>*/}
+                {/*                <span className={classes.tdAvatar}></span>BruceTheShark*/}
+                {/*            </td>*/}
+                {/*            <td>$950</td>*/}
+                {/*            <td>3/500</td>*/}
+                {/*            <td>January 3, 2021 / 1:20 PM</td>*/}
+                {/*            <td style={{ textAlign: 'right' }}>*/}
+                {/*                <img src={iconTable} alt="icon" />*/}
+                {/*            </td>*/}
+                {/*        </tr>*/}
+                {/*        <tr>*/}
+                {/*            <td>*/}
+                {/*                <span className={classes.tdAvatar}></span>CuddleFish*/}
+                {/*            </td>*/}
+                {/*            <td>$950</td>*/}
+                {/*            <td>3/500</td>*/}
+                {/*            <td>January 3, 2021 / 1:20 PM</td>*/}
+                {/*            <td style={{ textAlign: 'right' }}>*/}
+                {/*                <img src={iconTable} alt="icon" />*/}
+                {/*            </td>*/}
+                {/*        </tr>*/}
+                {/*        <tr>*/}
+                {/*            <td>*/}
+                {/*                <span className={classes.tdAvatar}></span>GillMan*/}
+                {/*            </td>*/}
+                {/*            <td>$950</td>*/}
+                {/*            <td>3/500</td>*/}
+                {/*            <td>January 3, 2021 / 1:20 PM</td>*/}
+                {/*            <td style={{ textAlign: 'right' }}>*/}
+                {/*                <img src={iconTable} alt="icon" />*/}
+                {/*            </td>*/}
+                {/*        </tr>*/}
+                {/*    </table>*/}
+                {/*</div>*/}
                 <h2 className={classes.marketTableTitle}>MORE AQUATIC CREATURES</h2>
                 <div className={classes.aquaCreatures}>
                     {otherFishCards.map((fish) => (
