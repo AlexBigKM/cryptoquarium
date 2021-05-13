@@ -20,9 +20,15 @@ const Main = () => {
 
     useEffect(() => {
         const data = term.length ? state.fishCards.filter((name) => name.fishName.toLowerCase().includes(term.toLowerCase())) : state.fishCards;
-        setFishData(data)
+        const dataId = term.length ? state.fishCards.filter((num) => num.fishId.toLowerCase().includes(term.toLowerCase())) : state.fishCards;
+        if (!parseInt(term)) {
+            setFishData(data)
+        } else {
+            setFishData(dataId)
+        }
+
     },[activeFilter, state])
-    
+
 
     const searchClick = (event) => {
         event.preventDefault();

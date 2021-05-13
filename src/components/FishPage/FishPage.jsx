@@ -24,10 +24,12 @@ const FishPage = () => {
         const fishIndex = state.fishCards.findIndex((fish) => fish.fishId === params.id);
         if (fishIndex < 0) return;
         const foundFish = state.fishCards[fishIndex];
-
+        console.log(foundFish);
         setFish(foundFish);
         setOtherFishCards(getRandomFish(foundFish.fishId));
     }, [state.fishCards.length]);
+
+
 
     useEffect(() => {
         if (state.isCorrectNetwork && state.selectedAccountAddress) {
@@ -108,6 +110,7 @@ const FishPage = () => {
                                 >
                                     SELECT & BUY
                                 </button>
+                                <button className={classes.marketItemBtn}>Not for sale</button>
                             </div>
                         </div>
                     </>
