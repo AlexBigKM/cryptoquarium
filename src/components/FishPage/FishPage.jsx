@@ -148,9 +148,8 @@ const FishPage = () => {
                                     disabled={isBuyBtnDisabled}
                                     onClick={startPaymentProcess}
                                 >
-                                    SELECT & BUY
+                                    {isBuyBtnDisabled ? 'NOT FOR SALE' : 'SELECT & BUY'} 
                                 </button>
-                                <button className={classes.marketItemBtn}>Not for sale</button>
                             </div>
                         </div>
                     </>
