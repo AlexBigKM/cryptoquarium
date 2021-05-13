@@ -8,34 +8,72 @@ import { useCustomSnackbar } from '../../hooks/custom-snackbars';
 import { ROUTES } from '../../constants';
 import { getRandInt } from '../../util/helpers';
 import clsx from 'clsx';
+import { loadFishDataById } from '../Main/util';
 
 const FishPage = () => {
     const { state, actions } = useAppState();
     const [fish, setFish] = useState(/** @type {FishCard|null} */ null);
     const [otherFishCards, setOtherFishCards] = useState([]);
     const [isBuyBtnDisabled, setIsBuyBtnDisabled] = useState(true);
+    const [isFishAvailableToPurchase, setFishAvailableToPurchase] = useState(false);
+    const [isCurrentUserOwner, setIsCurrentUserOwner] = useState(false);
+    const [fishOwnerAddress, setFishOwner] = useState(null);
 
     const classes = useStyles();
     const params = useParams();
     const { enqueueSnackbar, closeSnackbar, showError, showSuccess, ERROR_MSG } = useCustomSnackbar();
 
     useEffect(() => {
-        if (fish || state.fishCards.length === 0) return;
-        const fishIndex = state.fishCards.findIndex((fish) => fish.fishId === params.id);
-        if (fishIndex < 0) return;
-        const foundFish = state.fishCards[fishIndex];
+        if ((fish && fish.fishId === params.id) || !state.nftContract || !state.marketplaceContract) return;
+        let fishData;
 
-        setFish(foundFish);
-        setOtherFishCards(getRandomFish(foundFish.fishId));
-    }, [state.fishCards.length]);
+        const loadFishOwner = async (fishId) => {
+            const [ownerAddress, fishLocked] = await Promise.all([
+                state.nftContract.methods.ownerOf(fishId).call(),
+                state.nftContract.methods.fishLocked(fishId).call(),
+            ]);
+
+            setFishAvailableToPurchase(fishLocked);
+            setFishOwner(ownerAddress);
+        };
+
+        if (state.fishCards.length !== 0) {
+            const fishIndex = state.fishCards.findIndex((fish) => fish.fishId === params.id);
+            if (fishIndex < 0) return;
+            fishData = state.fishCards[fishIndex];
+            loadFishOwner(fishData.fishId);
+            setFish(fishData);
+            return;
+        }
+
+        loadFishDataById(params.id, state)
+            .then(async (fishData) => {
+                await loadFishOwner(fishData.fishId);
+                setFish(fishData);
+            })
+            .catch((error) => {
+                showError(ERROR_MSG.COULD_NOT_LOAD_DATA, error);
+            });
+    }, [params.id, state.nftContract, state.marketplaceContract]);
 
     useEffect(() => {
-        if (state.isCorrectNetwork && state.selectedAccountAddress) {
+        if (!fish || state.fishCards.length === 0) return;
+        setOtherFishCards(getRandomFish(fish.fishId));
+    }, [fish, state.fishCards.length]);
+
+    useEffect(() => {
+        if (!fishOwnerAddress) return;
+        const fishBelongsToCurrentUser = fishOwnerAddress.toUpperCase() === state.selectedAccountAddress.toUpperCase();
+        setIsCurrentUserOwner(fishBelongsToCurrentUser);
+    }, [fishOwnerAddress, state.selectedAccountAddress]);
+
+    useEffect(() => {
+        if (isFishAvailableToPurchase && state.isCorrectNetwork && state.selectedAccountAddress) {
             setIsBuyBtnDisabled(false);
         } else {
             setIsBuyBtnDisabled(true);
         }
-    }, [state.isCorrectNetwork, state.selectedAccountAddress]);
+    }, [state.isCorrectNetwork, state.selectedAccountAddress, isFishAvailableToPurchase]);
 
     const getRandomFish = (fishIdToExclude, resultAmount = 4) => {
         const randomFishArr = [];
@@ -70,6 +108,8 @@ const FishPage = () => {
 
             closeSnackbar(snackbarKey);
             showSuccess('Payment successful!');
+            setFishAvailableToPurchase(false);
+            setIsCurrentUserOwner(true);
         } catch (error) {
             closeSnackbar(snackbarKey);
             showError(ERROR_MSG.COULD_NOT_BUY_FISH, error);
@@ -257,7 +297,8 @@ const FishPage = () => {
                         <NavLink
                             to={generatePath(ROUTES.FISH_PAGE, { id: fish.fishId })}
                             key={fish.fishId}
-                            className={classes.mainFishes}>
+                            className={classes.mainFishes}
+                        >
                             <div className={classes.mainFishesBlock}>
                                 <div className={classes.mainFishesBlockImg}>
                                     <img
