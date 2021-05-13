@@ -26,7 +26,6 @@ const Main = () => {
         } else {
             setFishData(dataId)
         }
-
     },[activeFilter, state])
 
 
