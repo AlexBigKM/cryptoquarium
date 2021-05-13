@@ -1,12 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import { useAppState } from '../../app-state';
 import { NavLink } from 'react-router-dom'
 import Container from '@material-ui/core/Container'
+import { WEBURL, NETWORK_TYPE } from '../../constants';
 import {useStyles} from "../../style.js"
 
 import logo from '../../assets/img/logo.svg'
 
 const Header = () => {
+    const { state, actions } = useAppState();
+    const [metaMaskCheck, setMetaMaskCheck] = useState(false);
+
     const classes = useStyles();
+
+    useEffect(() => {
+        if (state.selectedAccountAddress === null) {
+            setMetaMaskCheck(true)
+        } else {
+            setMetaMaskCheck(false)
+        }
+    }, [state.selectedAccountAddress])
 
     return (
         
@@ -36,6 +49,11 @@ const Header = () => {
                     </li>
                 </ul>
             </nav>
+                {
+                    metaMaskCheck ?
+                    <span style={{color: '#fff', fontSize: '17px', textTransform: 'uppercase'}}
+                    >Please connect your <a href={WEBURL.METAMASKURL}>metamask</a> wallet</span> : null
+                }
             <div className={classes.headerAuth}>
 
             </div>
