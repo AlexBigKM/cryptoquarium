@@ -36,6 +36,11 @@ export const useStyles = makeStyles((theme) => ({
         marginLeft: '34px',
         fontSize: '20px',
     },
+    headerMessage : {
+        color: '#fff',
+        fontSize: '17px',
+        textTransform: 'uppercase'
+    },
     headerMenuItemsLink: {
         display: 'none',
         transition: 'all .5s',
@@ -52,7 +57,6 @@ export const useStyles = makeStyles((theme) => ({
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
     },
-
     mainBar: {
         backgroundColor: '#070B15',
         padding: '10px 0',
@@ -726,6 +730,9 @@ export const useStyles = makeStyles((theme) => ({
         opacity: '0.5',
         cursor: 'unset',
     },
+    fishPageWrapper : {
+        padding: '0 10px',
+    },
     tableBlock: {
         marginTop: '150px',
     },
@@ -758,10 +765,14 @@ export const useStyles = makeStyles((theme) => ({
         gridGap: '80px 85px',
         marginTop: '60px',
     },
-
     footer: {
         padding: '10px 0 30px',
         backgroundColor: '#000',
+    },
+    footerWrapper : {
+        display: 'flex',
+        justifyContent: 'space-between',
+        padding: 0
     },
     footerSocials: {
         margin: 'auto 0',
@@ -830,4 +841,291 @@ export const useStyles = makeStyles((theme) => ({
         fontSize: '10px',
         color: '#fff',
     },
+    '@media (max-width: 1080px)' : {
+        fishMarket: {
+            gridTemplateColumns: 'repeat(2, minmax(250px, 1fr))',
+            gridGap: '30px 20px',
+        },
+        marketItemImg : {
+            height: '427px',
+            '& img' : {
+                width: '130px'
+            },
+        },
+        marketItemTitle : {
+            fontSize: '50px',
+            margin: 'auto'
+        },
+        marketItemTitleItem : {
+            fontSize: '25px'
+        },
+        aquaCreatures : {
+            gridTemplateColumns: 'repeat(2, minmax(250px, 1fr))'
+        },
+        marketTableTitle : {
+            textAlign: 'center'
+        }
+    },
+    '@media (max-width: 960px)' : {
+        headerMenuItemsLi: {
+            marginLeft: '24px',
+            fontSize: '18px',
+        },
+        headerMessage : {
+            fontSize: '8px'
+        },
+        mainForm : {
+            display: 'flex'
+        },
+        footerSocialsTitle : {
+            margin: '0 0 5px'
+        },
+        footerSocialsItems : {
+            marginLeft: '5px',
+            marginRight: '5px'
+        },
+        footerMenuItemsLink : {
+            marginLeft: '15px'
+        },
+        marketItemImg : {
+            height: '275px',
+            width: '380px',
+            margin: 'auto',
+            '& img' : {
+                width: '95px'
+            },
+        },
+        animationBigFish: {
+            marginTop: '75px'
+        },
+        '@keyframes moving-bigfish': {
+            '0%': {
+                transform: 'translate(0, 0)',
+            },
+            '10%': {
+                transform: 'rotateY(180deg)',
+            },
+            '20%': {
+                transform: 'translateX(70px) rotateY(180deg)',
+            },
+            '30%': {
+                transform: 'translateX(70px)',
+            },
+            '40%': {
+                transform: 'translateX(-70px)',
+            },
+            '50%': {
+                transform: 'translateX(-70px) rotateY(180deg)',
+            },
+            '60%': {
+                transform: 'translate(50px, -20px) rotateY(180deg)',
+            },
+            '70%': {
+                transform: 'translate(50px, -20px)',
+            },
+            '80%': {
+                transform: 'translateX(20px)',
+            },
+            '90%': {
+                transform: 'translateY(90px)',
+            },
+            '100%': {
+                transform: 'translate(0, 0)',
+            },
+        },
+        marketItemTitle : {
+            fontSize: '30px'
+        },
+        marketItemTitleItem : {
+            fontSize: '20px'
+        },
+        marketItemDescrText : {
+            fontSize: '10px'
+        },
+        marketItemDescrTitle : {
+            fontSize: '15px'
+        },
+        marketItemBtn : {
+            fontSize: '18px',
+            marginTop: '10px'
+        },
+        aquaCreatures : {
+            marginTop: '30px',
+            gridGap: '25px 0'
+        },
+        mainFishesTitle : {
+            fontSize: '20px'
+        },
+        mainFishesPriceText : {
+            fontSize: '12px'
+        },
+        mainFishesPriceTitle : {
+            fontSize: '20px'
+        }
+    },
+    '@media (max-width: 790px)' : {
+        headerLogo : {
+          width: '80%'
+        },
+        headerMenuItems: {
+            marginLeft: '18px',
+            fontSize: '15px',
+        },
+        mainBarLeft : {
+          width: '100%'
+        },
+        mainForm : {
+          width: '100%'
+        },
+        footerSocialsTitle : {
+            fontSize: '15px'
+        }
+    },
+    '@media (max-width: 600px)' : {
+        header : {
+            padding: '20px 10px 10px'
+        },
+        headerMessage : {
+            margin: 'auto'
+        },
+        mainBar : {
+            padding: '20px 10px'
+        },
+        mainFormBtn : {
+            width: '30%'
+        },
+        mainFishesBlockImg : {
+            width: '210px',
+            height: '190px',
+            '& > img': {
+                width: '60px'
+            }
+        },
+        mainFishesTitle : {
+            fontSize: '15px'
+        },
+        mainFishesPriceTitle : {
+            fontSize: '20px'
+        },
+        mainFishesPriceText : {
+            fontSize: '12px'
+        },
+        marketItemDescr : {
+            marginLeft: '30px'
+        },
+        footer : {
+            padding: '10px'
+        },
+        footerMenuItemsLink : {
+            fontSize: '15px',
+            marginLeft: '12px'
+        }
+    },
+    '@media (max-width: 530px)' : {
+        fishMarket: {
+            gridGap: '30px 0',
+            gridTemplateColumns: 'repeat(2, minmax(238px, 1fr))'
+        },
+        footerWrapper: {
+            flexDirection: 'column'
+        },
+        footerSocialsTitle : {
+            textAlign: 'center'
+        },
+        footerMenu : {
+            justifyContent: 'space-between'
+        },
+        footerMenuItemsLink : {
+            fontSize: '20px',
+            marginLeft: '0'
+        },
+        footerCopyRights : {
+            textAlign: 'center'
+        }
+    },
+    '@media (max-width: 415px)' : {
+        header :{
+            padding: '10px'
+        },
+        headerLogo : {
+            width: '100%'
+        },
+        headerMessage : {
+            fontSize: '5px'
+        },
+        headerMenuItem: {
+            margin: 'auto'
+        },
+        headerMenuItems : {
+            marginLeft: '10px',
+            fontSize: '10px'
+        },
+        mainBar : {
+            padding: '10px'
+        },
+        mainFormInput : {
+            fontSize: '10px',
+            padding: '5px'
+        },
+        mainFishesBlockImg : {
+            width: '215px'
+        },
+        fishMarket : {
+            gridTemplateColumns: 'repeat(1, minmax(238px, 1fr))'
+        },
+        marketItem : {
+            flexDirection: 'column'
+        },
+        marketItemImg : {
+            width: '320px',
+            height: '305px'
+        },
+        marketItemDescr : {
+            width: '90%',
+            margin: 'auto',
+            textAlign:'center'
+        },
+        aquaCreatures : {
+            gridTemplateColumns: 'repeat(1, minmax(250px, 1fr))'
+        },
+        footerMenuItemsLink : {
+            fontSize: '18px'
+        }
+    },
+    '@media (max-width: 376px)' : {
+        header : {
+            padding: '10px'
+        },
+        headerLogo : {
+            width: '100%'
+        },
+        headerMenuItems : {
+            fontSize: '7px'
+        },
+        headerMessage : {
+            fontSize: '5px'
+        },
+        mainBar : {
+            padding: '10px'
+        },
+        mainFormInput : {
+            padding: '5px',
+            fontSize: '9px'
+        },
+        mainFormBtn : {
+            fontSize: '7px',
+            padding: '10px 5px'
+        },
+        footerMenuItemsLink : {
+            fontSize: '12px',
+            marginLeft: '0'
+        }
+    },
+    '@media (max-width: 320px)' : {
+        marketItemImg : {
+            width: '290px',
+            height: '270px'
+        }
+    }
+
 }));

@@ -38,7 +38,7 @@ const Main = () => {
         <main className={classes.main}>
             <div className={classes.mainBar}>
                 <Container
-                    maxWidth="lg"
+                    fixed
                     style={{
                         display: 'flex',
                         justifyContent: 'space-between',
@@ -79,7 +79,7 @@ const Main = () => {
                     </div>
                 </Container>
             </div>
-            <Container maxWidth="lg">
+            <Container fixed>
                 <div className={classes.fishMarket}>
                     {fishData.map((fish) => (
                         <NavLink
