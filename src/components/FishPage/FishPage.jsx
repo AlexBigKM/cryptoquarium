@@ -121,7 +121,8 @@ const FishPage = () => {
 
     return (
         <div className={classes.market}>
-            <Container maxWidth="lg" style={{ padding: '50px 0' }}>
+            <Container fixed style={{ padding: '50px 0' }}>
+                <div className={classes.fishPageWrapper}>
                 {fish && (
                     <>
                         <div className={classes.marketItem}>
@@ -317,6 +318,7 @@ const FishPage = () => {
                             </div>
                         </NavLink>
                     ))}
+                </div>
                 </div>
             </Container>
         </div>

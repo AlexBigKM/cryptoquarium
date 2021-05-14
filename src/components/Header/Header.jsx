@@ -24,7 +24,7 @@ const Header = () => {
     return (
         
         <header className={classes.header}>
-            <Container maxWidth="lg" style={{display: 'flex', padding: 0}}>
+            <Container fixed style={{display: 'flex', padding: 0}}>
             <div className={classes.headerLogo}>
                 <img className={classes.headerLogo} src={logo} />
             </div>
@@ -51,8 +51,9 @@ const Header = () => {
             </nav>
                 {
                     metaMaskCheck ?
-                    <span style={{color: '#fff', fontSize: '17px', textTransform: 'uppercase'}}
-                    >Please connect your <a href={WEBURL.METAMASKURL}>metamask</a> wallet</span> : null
+                    <span className={classes.headerMessage}>
+                        Please connect your <a href={WEBURL.METAMASKURL}>metamask</a> wallet
+                    </span> : null
                 }
             <div className={classes.headerAuth}>
 
