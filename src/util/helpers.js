@@ -131,6 +131,12 @@ export function initializeContracts(fallbackProvider, forceFallbackProvider = fa
     };
 }
 
+/** @returns {Web3} */
+export function getMetamaskProvider() {
+    const existingProvider = window.ethereum || window?.web3?.currentProvider;
+    return existingProvider ? new Web3Provider(existingProvider) : null;
+}
+
 export function getRandInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }

@@ -29,7 +29,7 @@ export const ERROR_MSG = {
     NO_CONNECTION: 'You have no connected account!',
     COULD_NOT_LOAD_DATA: 'Could not load data!',
     COULD_NOT_LOAD_DATA_CARDS: 'Could not data for fish cards!',
-    INCORRECT_NETWORK: 'Please switch to Rinkeby network first',
+    INCORRECT_NETWORK: 'You need to switch MetaMask to "Rinkeby"',
     COULD_NOT_LOAD_FISH_AUTHOR: 'Could not load fish author!',
     COULD_NOT_BUY_FISH: 'Could not buy fish!',
 };
