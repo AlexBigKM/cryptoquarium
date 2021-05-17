@@ -56,5 +56,5 @@ export const ANIMATIONS = [
     'animationTwelve',
 ];
 export const WEBURL = {
-    METAMASKURL: 'https://metamask.io/'
+    METAMASKURL: 'https://metamask.io/download.html'
 }
