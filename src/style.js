@@ -11,6 +11,45 @@ export const useStyles = makeStyles((theme) => ({
         padding: '20px 0 10px',
         borderBottom: '1px solid #2effff',
     },
+    // Burger menu start
+    burgerMenuBtn : {
+        display: 'none',
+    },
+    headerBtnSpan : {
+        height: '2px',
+        backgroundColor: '#6FED9B',
+        display: 'block'
+    },
+    burgerBtnNav : {
+        display: 'none',
+        flexFlow: 'column nowrap',
+        justifyContent: 'space-around',
+        position: 'fixed',
+        backgroundColor: '#141D35',
+        width: '300px',
+        height: '100vh',
+        margin: 0,
+        zIndex: '99',
+        transition: 'all .5s ease',
+        transform: 'translateX(-100%)'
+    },
+    burgerBtnNavActive : {
+        display: 'flex',
+        flexFlow: 'column nowrap',
+        justifyContent: 'space-around',
+        position: 'fixed',
+        backgroundColor: '#141D35',
+        width: '300px',
+        height: '100vh',
+        margin: 0,
+        zIndex: '99',
+        transition: 'all .5s ease',
+        transform: 'translateX(0)'
+    },
+    burgerBtnNavLi : {
+        fontSize: '30px'
+    },
+    // Burger menu end
     headerLogo: {
         display: 'flex',
         alignItems: 'center',
@@ -39,7 +78,8 @@ export const useStyles = makeStyles((theme) => ({
     headerMessage : {
         color: '#fff',
         fontSize: '17px',
-        textTransform: 'uppercase'
+        textTransform: 'uppercase',
+        margin: 'auto'
     },
     headerMenuItemsLink: {
         display: 'none',
@@ -965,7 +1005,28 @@ export const useStyles = makeStyles((theme) => ({
     },
     '@media (max-width: 790px)' : {
         headerLogo : {
-          width: '80%'
+            width: '100%',
+            margin: 'auto'
+        },
+        headerMenu : {
+            display: 'none'
+        },
+        burgerBtnNavActive : {
+            width: '390px'
+        },
+        burgerMenuBtn : {
+            display: 'flex',
+            flexFlow: 'column nowrap',
+            justifyContent: 'space-around',
+            height: '40px',
+            width: '40px',
+            position: 'fixed',
+            top: '10px',
+            transform: 'translateX(20px)',
+            zIndex: '100'
+        },
+        burgerBtnNav : {
+            display: 'flex'
         },
         headerMenuItems: {
             marginLeft: '18px',
@@ -984,6 +1045,12 @@ export const useStyles = makeStyles((theme) => ({
     '@media (max-width: 600px)' : {
         header : {
             padding: '20px 10px 10px'
+        },
+        headerLogo : {
+            width: '60%'
+        },
+        burgerMenuBtn : {
+            top: '12px'
         },
         headerMessage : {
             margin: 'auto'
@@ -1044,11 +1111,21 @@ export const useStyles = makeStyles((theme) => ({
         }
     },
     '@media (max-width: 415px)' : {
+        burgerBtnNavLi : {
+            fontSize: '25px'
+        },
+        burgerBtnNavActive : {
+            width: '230px'
+        },
+        burgerMenuBtn : {
+            top: '4px'
+        },
         header :{
             padding: '10px'
         },
         headerLogo : {
-            width: '100%'
+            width: '70%',
+            marginRight: '5px'
         },
         headerMessage : {
             fontSize: '5px'
@@ -1097,7 +1174,11 @@ export const useStyles = makeStyles((theme) => ({
             padding: '10px'
         },
         headerLogo : {
-            width: '100%'
+            width: '65%'
+        },
+        burgerMenuBtn : {
+            width: '30px',
+            height: '30px'
         },
         headerMenuItems : {
             fontSize: '7px'

@@ -22,7 +22,7 @@ function App() {
                 <div className={classes.wrapper}>
                     <Switch>
                         <Route exact path={ROUTES.HOME} component={Main}>
-                            <Redirect to={ROUTES.MAIN} />
+                            {/*<Redirect to={ROUTES.MAIN} />*/}
                         </Route>
                         <Route path={ROUTES.MAIN} component={Main} />
                         <Route path={ROUTES.FISH_PAGE} component={FishPage} />
