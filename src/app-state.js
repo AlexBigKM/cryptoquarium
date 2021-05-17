@@ -19,7 +19,8 @@ import { ACTION_TYPES } from './constants';
 
 /**
  * @typedef AppState
- * @property {boolean|null} isCorrectNetwork
+ * @property {boolean} isCorrectNetwork
+ * @property {boolean} isMetamaskAvailable
  * @property {string|null} selectedAccountAddress
  * @property {Web3|null} web3Provider
  * @property {Contract|null} nftContract
@@ -29,7 +30,8 @@ import { ACTION_TYPES } from './constants';
 
 /** @type {AppState} */
 export const appInitialState = {
-    isCorrectNetwork: null,
+    isCorrectNetwork: false,
+    isMetamaskAvailable: false,
     selectedAccountAddress: null,
     web3Provider: null,
     nftContract: null,
