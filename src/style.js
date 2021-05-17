@@ -1017,7 +1017,7 @@ export const useStyles = makeStyles((theme) => ({
         burgerMenuBtn : {
             display: 'flex',
             flexFlow: 'column nowrap',
-            justifyContent: 'space-around',
+            justifyContent: 'space-evenly',
             height: '40px',
             width: '40px',
             position: 'fixed',
