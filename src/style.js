@@ -21,8 +21,6 @@ export const useStyles = makeStyles((theme) => ({
     drawerPaper: {
         width: drawerWidth,
         backgroundColor: '#141D35',
-        zIndex: '1000',
-        transform: '-webkit-translateZ(1000px)',
     },
     active: {
         background: '#070C15',
@@ -153,6 +151,7 @@ export const useStyles = makeStyles((theme) => ({
         animationDuration: '32s',
         animationTimingFunction: 'ease',
         animationIterationCount: 'infinite',
+        perspective: '1000px',
     },
     animationTwo: {
         marginTop: '60px',
@@ -160,6 +159,7 @@ export const useStyles = makeStyles((theme) => ({
         animationDuration: '30s',
         animationTimingFunction: 'ease',
         animationIterationCount: 'infinite',
+        perspective: '1000px',
     },
     animationThree: {
         marginTop: '70px',
@@ -167,6 +167,7 @@ export const useStyles = makeStyles((theme) => ({
         animationDuration: '38s',
         animationTimingFunction: 'ease',
         animationIterationCount: 'infinite',
+        perspective: '1000px',
     },
     animationFour: {
         marginTop: '40px',
@@ -174,6 +175,7 @@ export const useStyles = makeStyles((theme) => ({
         animationDuration: '34s',
         animationTimingFunction: 'infinite',
         animationIterationCount: 'infinite',
+        perspective: '1000px',
     },
     animationFive: {
         marginTop: '80px',
@@ -181,6 +183,7 @@ export const useStyles = makeStyles((theme) => ({
         animationDuration: '46s',
         animationTimingFunction: 'infinite',
         animationIterationCount: 'infinite',
+        perspective: '1000px',
     },
     animationSix: {
         marginTop: '80px',
@@ -188,6 +191,7 @@ export const useStyles = makeStyles((theme) => ({
         animationDuration: '34s',
         animationTimingFunction: 'infinite',
         animationIterationCount: 'infinite',
+        perspective: '1000px',
     },
     animationSeven: {
         marginTop: '40px',
@@ -195,6 +199,7 @@ export const useStyles = makeStyles((theme) => ({
         animationDuration: '25s',
         animationTimingFunction: 'infinite',
         animationIterationCount: 'infinite',
+        perspective: '1000px',
     },
     animationEight: {
         marginTop: '80px',
@@ -202,6 +207,7 @@ export const useStyles = makeStyles((theme) => ({
         animationDuration: '36s',
         animationTimingFunction: 'infinite',
         animationIterationCount: 'infinite',
+        perspective: '1000px',
     },
     animationNine: {
         marginTop: '80px',
@@ -209,6 +215,7 @@ export const useStyles = makeStyles((theme) => ({
         animationDuration: '40s',
         animationTimingFunction: 'infinite',
         animationIterationCount: 'infinite',
+        perspective: '1000px',
     },
     animationTen: {
         marginTop: '70px',
@@ -216,6 +223,7 @@ export const useStyles = makeStyles((theme) => ({
         animationDuration: '38s',
         animationTimingFunction: 'infinite',
         animationIterationCount: 'infinite',
+        perspective: '1000px',
     },
     animationEleven: {
         marginTop: '40px',
@@ -223,6 +231,7 @@ export const useStyles = makeStyles((theme) => ({
         animationDuration: '48s',
         animationTimingFunction: 'infinite',
         animationIterationCount: 'infinite',
+        perspective: '1000px',
     },
     animationTwelve: {
         marginTop: '100px',
@@ -230,6 +239,7 @@ export const useStyles = makeStyles((theme) => ({
         animationDuration: '50s',
         animationTimingFunction: 'infinite',
         animationIterationCount: 'infinite',
+        perspective: '1000px',
     },
     animationBigFish: {
         marginTop: '140px',
@@ -237,6 +247,7 @@ export const useStyles = makeStyles((theme) => ({
         animationDuration: '50s',
         animationTimingFunction: 'infinite',
         animationIterationCount: 'infinite',
+        perspective: '1000px',
     },
 
     '@keyframes moving': {
