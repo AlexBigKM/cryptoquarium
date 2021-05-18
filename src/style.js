@@ -3,6 +3,8 @@ import background from './assets/img/background1.jpg';
 import akvarium from './assets/img/akvarium.png';
 import akvariumMarket from './assets/img/akvarium-mark.png';
 
+const drawerWidth = 200;
+
 export const useStyles = makeStyles((theme) => ({
     header: {
         backgroundColor: '#000',
@@ -12,43 +14,33 @@ export const useStyles = makeStyles((theme) => ({
         borderBottom: '1px solid #2effff',
     },
     // Burger menu start
-    burgerMenuBtn : {
+    drawer : {
+        width: drawerWidth,
         display: 'none',
     },
-    headerBtnSpan : {
+    drawerPaper : {
+        width: drawerWidth,
+        backgroundColor: '#141D35',
+    },
+    active : {
+        background: '#070C15'
+    },
+    sideBarBtn : {
+        display: 'none',
+        flexDirection: 'column',
+        justifyContent: 'space-around',
+        position: 'fixed',
+        top: '15px',
+        left: '40px',
+        width: '30px',
+        height: '30px'
+    },
+    sideBarBtnSpan : {
         height: '2px',
         backgroundColor: '#6FED9B',
         display: 'block'
     },
-    burgerBtnNav : {
-        display: 'none',
-        flexFlow: 'column nowrap',
-        justifyContent: 'space-around',
-        position: 'fixed',
-        backgroundColor: '#141D35',
-        width: '300px',
-        height: '100vh',
-        margin: 0,
-        zIndex: '99',
-        transition: 'all .5s ease',
-        transform: 'translateX(-100%)'
-    },
-    burgerBtnNavActive : {
-        display: 'flex',
-        flexFlow: 'column nowrap',
-        justifyContent: 'space-around',
-        position: 'fixed',
-        backgroundColor: '#141D35',
-        width: '300px',
-        height: '100vh',
-        margin: 0,
-        zIndex: '99',
-        transition: 'all .5s ease',
-        transform: 'translateX(0)'
-    },
-    burgerBtnNavLi : {
-        fontSize: '30px'
-    },
+
     // Burger menu end
     headerLogo: {
         display: 'flex',
@@ -1004,29 +996,14 @@ export const useStyles = makeStyles((theme) => ({
         }
     },
     '@media (max-width: 790px)' : {
-        headerLogo : {
-            width: '100%',
-            margin: 'auto'
+        drawer : {
+            display: 'block'
+        },
+        sideBarBtn : {
+            display: 'flex'
         },
         headerMenu : {
             display: 'none'
-        },
-        burgerBtnNavActive : {
-            width: '390px'
-        },
-        burgerMenuBtn : {
-            display: 'flex',
-            flexFlow: 'column nowrap',
-            justifyContent: 'space-evenly',
-            height: '40px',
-            width: '40px',
-            position: 'fixed',
-            top: '10px',
-            transform: 'translateX(20px)',
-            zIndex: '100'
-        },
-        burgerBtnNav : {
-            display: 'flex'
         },
         headerMenuItems: {
             marginLeft: '18px',
@@ -1047,10 +1024,7 @@ export const useStyles = makeStyles((theme) => ({
             padding: '20px 10px 10px'
         },
         headerLogo : {
-            width: '60%'
-        },
-        burgerMenuBtn : {
-            top: '12px'
+            marginLeft: '40px'
         },
         headerMessage : {
             margin: 'auto'
@@ -1110,15 +1084,14 @@ export const useStyles = makeStyles((theme) => ({
             textAlign: 'center'
         }
     },
+    '@media (max-width: 500px)' : {
+        fishMarket: {
+            gridTemplateColumns: 'repeat(2, minmax(234px, 1fr))'
+        },
+    },
     '@media (max-width: 415px)' : {
-        burgerBtnNavLi : {
-            fontSize: '25px'
-        },
-        burgerBtnNavActive : {
-            width: '230px'
-        },
-        burgerMenuBtn : {
-            top: '4px'
+        sideBarBtn : {
+            top: '8px'
         },
         header :{
             padding: '10px'
@@ -1170,15 +1143,15 @@ export const useStyles = makeStyles((theme) => ({
         }
     },
     '@media (max-width: 376px)' : {
+        sideBarBtn : {
+            width: '20px',
+            height: '20px'
+        },
         header : {
             padding: '10px'
         },
         headerLogo : {
             width: '65%'
-        },
-        burgerMenuBtn : {
-            width: '30px',
-            height: '30px'
         },
         headerMenuItems : {
             fontSize: '7px'
