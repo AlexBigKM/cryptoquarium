@@ -21,6 +21,7 @@ export const useStyles = makeStyles((theme) => ({
     drawerPaper: {
         width: drawerWidth,
         backgroundColor: '#141D35',
+        zIndex: 1000,
     },
     active: {
         background: '#070C15',
@@ -34,6 +35,7 @@ export const useStyles = makeStyles((theme) => ({
         left: '40px',
         width: '30px',
         height: '30px',
+        zIndex: 99,
     },
     sideBarBtnSpan: {
         height: '2px',
@@ -367,7 +369,7 @@ export const useStyles = makeStyles((theme) => ({
             transform: 'translateY(50px)',
         },
         '70%': {
-            transform: 'translateY(50px)',
+            transform: 'translateY(30px)',
         },
         '80%': {
             transform: 'translateX(-50px)',
