@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useAppState } from '../../app-state';
-// import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import { NavLink } from 'react-router-dom'
 import Container from '@material-ui/core/Container'
 import { WEBURL, NETWORK_TYPE } from '../../constants';
+import SideBar from '../SideBar/SideBar'
 import {useStyles} from "../../style.js"
 
 import logo from '../../assets/img/logo.svg'
@@ -24,52 +24,9 @@ const Header = () => {
     }, [state.selectedAccountAddress])
 
 
-    const toggleBtn = () => {
-        setOpen(!open);
-    }
-
-    // const handleClick  = () => {
-    //     setOpen((prev) => !prev);
-    // };
-    //
-    // const handleClickAway  = () => {
-    //     setOpen(false);
-    // };
-
     return (
         <>
-        {/*<ClickAwayListener onClickAway={handleClickAway }>*/}
-            <div onClick={toggleBtn} className={classes.burgerMenuBtn}>
-                <span className={classes.headerBtnSpan}></span>
-                <span className={classes.headerBtnSpan}></span>
-                <span className={classes.headerBtnSpan}></span>
-            </div>
-            {/*{ open ? (*/}
-            {/*    <ul className={classes.burgerBtnNavActive}>*/}
-            {/*        <li className={classes.burgerBtnNavLi}>*/}
-            {/*            <NavLink  to="/main">MARKETPLACE</NavLink>*/}
-            {/*        </li>*/}
-            {/*        <li className={classes.burgerBtnNavLi}>*/}
-            {/*            <NavLink  to="/faq">FAQ</NavLink>*/}
-            {/*        </li>*/}
-            {/*        <li className={classes.burgerBtnNavLi}>*/}
-            {/*            <NavLink  to="/contact">CONTACT</NavLink>*/}
-            {/*        </li>*/}
-            {/*    </ul>*/}
-            {/*) : null }*/}
-            <ul className={open ? classes.burgerBtnNavActive : classes.burgerBtnNav}>
-                <li className={classes.burgerBtnNavLi}>
-                    <NavLink  to="/main">MARKETPLACE</NavLink>
-                </li>
-                <li className={classes.burgerBtnNavLi}>
-                    <NavLink  to="/faq">FAQ</NavLink>
-                </li>
-                <li className={classes.burgerBtnNavLi}>
-                    <NavLink  to="/contact">CONTACT</NavLink>
-                </li>
-            </ul>
-
-        {/*</ClickAwayListener>*/}
+        <SideBar/>
         <header className={classes.header}>
             <Container fixed style={{display: 'flex', padding: 0}}>
                 <div className={classes.headerLogo}>
