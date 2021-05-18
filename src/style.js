@@ -17,12 +17,12 @@ export const useStyles = makeStyles((theme) => ({
     drawer: {
         width: drawerWidth,
         display: 'none',
-        zIndex: 99,
     },
     drawerPaper: {
         width: drawerWidth,
         backgroundColor: '#141D35',
-        zIndex: 99,
+        zIndex: '1000',
+        transform: '-webkit-translateZ(1000px)',
     },
     active: {
         background: '#070C15',
