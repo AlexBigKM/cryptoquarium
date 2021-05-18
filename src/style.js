@@ -3,7 +3,7 @@ import background from './assets/img/background1.jpg';
 import akvarium from './assets/img/akvarium.png';
 import akvariumMarket from './assets/img/akvarium-mark.png';
 
-const drawerWidth = 200;
+const drawerWidth = 150;
 
 export const useStyles = makeStyles((theme) => ({
     header: {
@@ -17,10 +17,12 @@ export const useStyles = makeStyles((theme) => ({
     drawer: {
         width: drawerWidth,
         display: 'none',
+        zIndex: 99,
     },
     drawerPaper: {
         width: drawerWidth,
         backgroundColor: '#141D35',
+        zIndex: 99,
     },
     active: {
         background: '#070C15',
