@@ -16,13 +16,13 @@ export const useStyles = makeStyles((theme) => ({
     // Burger menu start
     drawer: {
         width: drawerWidth,
-        display: 'none',
-        zIndex: 99,
+        display: 'none'
     },
     drawerPaper: {
         width: drawerWidth,
         backgroundColor: '#141D35',
-        zIndex: 99,
+        zIndex: '1000',
+        transform: '-webkit-translateZ(1000px)',
     },
     active: {
         background: '#070C15',
