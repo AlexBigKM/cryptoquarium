@@ -14,18 +14,18 @@ export const useStyles = makeStyles((theme) => ({
         borderBottom: '1px solid #2effff',
     },
     // Burger menu start
-    drawer : {
+    drawer: {
         width: drawerWidth,
         display: 'none',
     },
-    drawerPaper : {
+    drawerPaper: {
         width: drawerWidth,
         backgroundColor: '#141D35',
     },
-    active : {
-        background: '#070C15'
+    active: {
+        background: '#070C15',
     },
-    sideBarBtn : {
+    sideBarBtn: {
         display: 'none',
         flexDirection: 'column',
         justifyContent: 'space-around',
@@ -33,12 +33,12 @@ export const useStyles = makeStyles((theme) => ({
         top: '15px',
         left: '40px',
         width: '30px',
-        height: '30px'
+        height: '30px',
     },
-    sideBarBtnSpan : {
+    sideBarBtnSpan: {
         height: '2px',
         backgroundColor: '#6FED9B',
-        display: 'block'
+        display: 'block',
     },
 
     // Burger menu end
@@ -67,11 +67,11 @@ export const useStyles = makeStyles((theme) => ({
         marginLeft: '34px',
         fontSize: '20px',
     },
-    headerMessage : {
+    headerMessage: {
         color: '#fff',
         fontSize: '17px',
         textTransform: 'uppercase',
-        margin: 'auto'
+        margin: 'auto',
     },
     headerMenuItemsLink: {
         display: 'none',
@@ -762,7 +762,7 @@ export const useStyles = makeStyles((theme) => ({
         opacity: '0.5',
         cursor: 'unset',
     },
-    fishPageWrapper : {
+    fishPageWrapper: {
         padding: '0 10px',
     },
     tableBlock: {
@@ -801,10 +801,10 @@ export const useStyles = makeStyles((theme) => ({
         padding: '10px 0 30px',
         backgroundColor: '#000',
     },
-    footerWrapper : {
+    footerWrapper: {
         display: 'flex',
         justifyContent: 'space-between',
-        padding: 0
+        padding: 0,
     },
     footerSocials: {
         margin: 'auto 0',
@@ -873,313 +873,315 @@ export const useStyles = makeStyles((theme) => ({
         fontSize: '10px',
         color: '#fff',
     },
-    '@media (max-width: 1080px)' : {
+    '@media (max-width: 1080px)': {
         fishMarket: {
             gridTemplateColumns: 'repeat(2, minmax(250px, 1fr))',
             gridGap: '30px 20px',
         },
-        marketItemImg : {
+        marketItemImg: {
             height: '427px',
-            '& img' : {
-                width: '130px'
+            '& img': {
+                width: '130px',
             },
         },
-        marketItemTitle : {
+        marketItemTitle: {
             fontSize: '50px',
-            margin: 'auto'
+            margin: 'auto',
         },
-        marketItemTitleItem : {
-            fontSize: '25px'
+        marketItemTitleItem: {
+            fontSize: '25px',
         },
-        aquaCreatures : {
-            gridTemplateColumns: 'repeat(2, minmax(250px, 1fr))'
+        aquaCreatures: {
+            gridTemplateColumns: 'repeat(2, minmax(250px, 1fr))',
         },
-        marketTableTitle : {
-            textAlign: 'center'
-        }
+        marketTableTitle: {
+            textAlign: 'center',
+        },
     },
-    '@media (max-width: 960px)' : {
+    '@media (max-width: 960px)': {
         headerMenuItemsLi: {
             marginLeft: '24px',
             fontSize: '18px',
         },
-        headerMessage : {
-            fontSize: '8px'
+        headerMessage: {
+            fontSize: '8px',
         },
-        mainForm : {
-            display: 'flex'
+        mainForm: {
+            display: 'flex',
         },
-        footerSocialsTitle : {
-            margin: '0 0 5px'
+        footerSocialsTitle: {
+            margin: '0 0 5px',
         },
-        footerSocialsItems : {
+        footerSocialsItems: {
             marginLeft: '5px',
-            marginRight: '5px'
+            marginRight: '5px',
         },
-        footerMenuItemsLink : {
-            marginLeft: '15px'
+        footerMenuItemsLink: {
+            marginLeft: '15px',
         },
-        marketItemImg : {
+        marketItemImg: {
             height: '275px',
             width: '380px',
             margin: 'auto',
-            '& img' : {
-                width: '95px'
+            '& img': {
+                width: '80px',
             },
         },
         animationBigFish: {
-            marginTop: '75px'
+            marginTop: '75px',
         },
-        '@keyframes moving-bigfish': {
-            '0%': {
-                transform: 'translate(0, 0)',
-            },
-            '10%': {
-                transform: 'rotateY(180deg)',
-            },
-            '20%': {
-                transform: 'translateX(70px) rotateY(180deg)',
-            },
-            '30%': {
-                transform: 'translateX(70px)',
-            },
-            '40%': {
-                transform: 'translateX(-70px)',
-            },
-            '50%': {
-                transform: 'translateX(-70px) rotateY(180deg)',
-            },
-            '60%': {
-                transform: 'translate(50px, -20px) rotateY(180deg)',
-            },
-            '70%': {
-                transform: 'translate(50px, -20px)',
-            },
-            '80%': {
-                transform: 'translateX(20px)',
-            },
-            '90%': {
-                transform: 'translateY(90px)',
-            },
-            '100%': {
-                transform: 'translate(0, 0)',
-            },
+        // '@keyframes moving-bigfish': {
+        //     '0%': {
+        //         transform: 'translate(0, 0)',
+        //     },
+        //     '10%': {
+        //         transform: 'rotateY(180deg)',
+        //     },
+        //     '20%': {
+        //         transform: 'translateX(70px) rotateY(180deg)',
+        //     },
+        //     '30%': {
+        //         transform: 'translateX(70px)',
+        //     },
+        //     '40%': {
+        //         transform: 'translateX(-70px)',
+        //     },
+        //     '50%': {
+        //         transform: 'translateX(-70px) rotateY(180deg)',
+        //     },
+        //     '60%': {
+        //         transform: 'translate(50px, -20px) rotateY(180deg)',
+        //     },
+        //     '70%': {
+        //         transform: 'translate(50px, -20px)',
+        //     },
+        //     '80%': {
+        //         transform: 'translateX(20px)',
+        //     },
+        //     '90%': {
+        //         transform: 'translateY(90px)',
+        //     },
+        //     '100%': {
+        //         transform: 'translate(0, 0)',
+        //     },
+        // },
+        marketItemTitle: {
+            fontSize: '30px',
         },
-        marketItemTitle : {
-            fontSize: '30px'
+        marketItemTitleItem: {
+            fontSize: '20px',
         },
-        marketItemTitleItem : {
-            fontSize: '20px'
+        marketItemDescrText: {
+            fontSize: '10px',
         },
-        marketItemDescrText : {
-            fontSize: '10px'
+        marketItemDescrTitle: {
+            fontSize: '15px',
         },
-        marketItemDescrTitle : {
-            fontSize: '15px'
-        },
-        marketItemBtn : {
+        marketItemBtn: {
             fontSize: '18px',
-            marginTop: '10px'
+            marginTop: '10px',
         },
-        aquaCreatures : {
+        aquaCreatures: {
             marginTop: '30px',
-            gridGap: '25px 0'
+            gridGap: '25px 0',
         },
-        mainFishesTitle : {
-            fontSize: '20px'
+        mainFishesTitle: {
+            fontSize: '20px',
         },
-        mainFishesPriceText : {
-            fontSize: '12px'
+        mainFishesPriceText: {
+            fontSize: '12px',
         },
-        mainFishesPriceTitle : {
-            fontSize: '20px'
-        }
+        mainFishesPriceTitle: {
+            fontSize: '20px',
+        },
     },
-    '@media (max-width: 790px)' : {
-        drawer : {
-            display: 'block'
+    '@media (max-width: 790px)': {
+        drawer: {
+            display: 'block',
         },
-        sideBarBtn : {
-            display: 'flex'
+        sideBarBtn: {
+            display: 'flex',
         },
-        headerMenu : {
-            display: 'none'
+        headerMenu: {
+            display: 'none',
         },
         headerMenuItems: {
             marginLeft: '18px',
             fontSize: '15px',
         },
-        mainBarLeft : {
-          width: '100%'
+        mainBarLeft: {
+            width: '100%',
         },
-        mainForm : {
-          width: '100%'
+        mainForm: {
+            width: '100%',
         },
-        footerSocialsTitle : {
-            fontSize: '15px'
-        }
+        footerSocialsTitle: {
+            fontSize: '15px',
+        },
     },
-    '@media (max-width: 600px)' : {
-        header : {
-            padding: '20px 10px 10px'
+    '@media (max-width: 600px)': {
+        header: {
+            padding: '20px 10px 10px',
         },
-        headerLogo : {
-            marginLeft: '40px'
+        headerLogo: {
+            marginLeft: '40px',
         },
-        headerMessage : {
-            margin: 'auto'
+        headerMessage: {
+            margin: 'auto',
         },
-        mainBar : {
-            padding: '20px 10px'
+        mainBar: {
+            padding: '20px 10px',
         },
-        mainFormBtn : {
-            width: '30%'
+        mainFormBtn: {
+            width: '30%',
         },
-        mainFishesBlockImg : {
+        mainFishesBlockImg: {
             width: '210px',
             height: '190px',
             '& > img': {
-                width: '60px'
-            }
+                width: '60px',
+            },
         },
-        mainFishesTitle : {
-            fontSize: '15px'
-        },
-        mainFishesPriceTitle : {
-            fontSize: '20px'
-        },
-        mainFishesPriceText : {
-            fontSize: '12px'
-        },
-        marketItemDescr : {
-            marginLeft: '30px'
-        },
-        footer : {
-            padding: '10px'
-        },
-        footerMenuItemsLink : {
+        mainFishesTitle: {
             fontSize: '15px',
-            marginLeft: '12px'
-        }
+        },
+        mainFishesPriceTitle: {
+            fontSize: '20px',
+        },
+        mainFishesPriceText: {
+            fontSize: '12px',
+        },
+        marketItemDescr: {
+            marginLeft: '30px',
+        },
+        footer: {
+            padding: '10px',
+        },
+        footerMenuItemsLink: {
+            fontSize: '15px',
+            marginLeft: '12px',
+        },
     },
-    '@media (max-width: 530px)' : {
+    '@media (max-width: 530px)': {
         fishMarket: {
             gridGap: '30px 0',
-            gridTemplateColumns: 'repeat(2, minmax(238px, 1fr))'
+            gridTemplateColumns: 'repeat(2, minmax(238px, 1fr))',
         },
         footerWrapper: {
-            flexDirection: 'column'
+            flexDirection: 'column',
         },
-        footerSocialsTitle : {
-            textAlign: 'center'
+        footerSocialsTitle: {
+            textAlign: 'center',
         },
-        footerMenu : {
-            justifyContent: 'space-between'
+        footerMenu: {
+            justifyContent: 'space-between',
         },
-        footerMenuItemsLink : {
+        footerMenuItemsLink: {
             fontSize: '20px',
-            marginLeft: '0'
+            marginLeft: '0',
         },
-        footerCopyRights : {
-            textAlign: 'center'
-        }
+        footerCopyRights: {
+            textAlign: 'center',
+        },
     },
-    '@media (max-width: 500px)' : {
+    '@media (max-width: 500px)': {
         fishMarket: {
-            gridTemplateColumns: 'repeat(2, minmax(234px, 1fr))'
+            gridTemplateColumns: 'repeat(2, minmax(234px, 1fr))',
         },
     },
-    '@media (max-width: 415px)' : {
-        sideBarBtn : {
-            top: '8px'
+    '@media (max-width: 415px)': {
+        sideBarBtn: {
+            top: '8px',
         },
-        header :{
-            padding: '10px'
+        header: {
+            padding: '10px',
         },
-        headerLogo : {
+        headerLogo: {
             width: '70%',
-            marginRight: '5px'
+            marginRight: '5px',
         },
-        headerMessage : {
-            fontSize: '5px'
+        headerMessage: {
+            fontSize: '5px',
         },
         headerMenuItem: {
-            margin: 'auto'
+            margin: 'auto',
         },
-        headerMenuItems : {
+        headerMenuItems: {
             marginLeft: '10px',
-            fontSize: '10px'
-        },
-        mainBar : {
-            padding: '10px'
-        },
-        mainFormInput : {
             fontSize: '10px',
-            padding: '5px'
         },
-        mainFishesBlockImg : {
-            width: '215px'
+        mainBar: {
+            padding: '10px',
         },
-        fishMarket : {
-            gridTemplateColumns: 'repeat(1, minmax(238px, 1fr))'
+        mainFormInput: {
+            fontSize: '10px',
+            padding: '5px',
         },
-        marketItem : {
-            flexDirection: 'column'
+        mainFishesBlockImg: {
+            width: '215px',
         },
-        marketItemImg : {
+        fishMarket: {
+            gridTemplateColumns: 'repeat(1, minmax(238px, 1fr))',
+        },
+        marketItem: {
+            flexDirection: 'column',
+        },
+        marketItemImg: {
             width: '320px',
-            height: '305px'
+            height: '305px',
         },
-        marketItemDescr : {
+        marketItemDescr: {
             width: '90%',
             margin: 'auto',
-            textAlign:'center'
+            textAlign: 'center',
         },
-        aquaCreatures : {
-            gridTemplateColumns: 'repeat(1, minmax(250px, 1fr))'
+        aquaCreatures: {
+            gridTemplateColumns: 'repeat(1, minmax(250px, 1fr))',
         },
-        footerMenuItemsLink : {
-            fontSize: '18px'
-        }
+        footerMenuItemsLink: {
+            fontSize: '18px',
+        },
     },
-    '@media (max-width: 376px)' : {
-        sideBarBtn : {
+    '@media (max-width: 376px)': {
+        sideBarBtn: {
             width: '20px',
-            height: '20px'
+            height: '20px',
         },
-        header : {
-            padding: '10px'
+        header: {
+            padding: '10px',
         },
-        headerLogo : {
-            width: '65%'
+        headerLogo: {
+            width: '65%',
         },
-        headerMenuItems : {
-            fontSize: '7px'
-        },
-        headerMessage : {
-            fontSize: '5px'
-        },
-        mainBar : {
-            padding: '10px'
-        },
-        mainFormInput : {
-            padding: '5px',
-            fontSize: '9px'
-        },
-        mainFormBtn : {
+        headerMenuItems: {
             fontSize: '7px',
-            padding: '10px 5px'
         },
-        footerMenuItemsLink : {
+        headerMessage: {
+            fontSize: '5px',
+        },
+        mainBar: {
+            padding: '10px',
+        },
+        mainFormInput: {
+            padding: '5px',
+            fontSize: '9px',
+        },
+        mainFormBtn: {
+            fontSize: '7px',
+            padding: '10px 5px',
+        },
+        footerMenuItemsLink: {
             fontSize: '12px',
-            marginLeft: '0'
-        }
+            marginLeft: '0',
+        },
     },
-    '@media (max-width: 320px)' : {
-        marketItemImg : {
+    '@media (max-width: 320px)': {
+        marketItemImg: {
             width: '290px',
-            height: '270px'
-        }
-    }
-
+            height: '270px',
+            '& img': {
+                width: '70px',
+            },
+        },
+    },
 }));

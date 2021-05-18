@@ -3,7 +3,7 @@ import { MarketplaceAbi, NFTAbi } from './config';
 export const DEBUG_MODE = process.env.REACT_APP_DEBUG_MODE === '1';
 export const NETWORK_TYPE = process.env.REACT_APP_NETWORK_TYPE;
 export const FALLBACK_PROVIDER_URL = process.env.REACT_APP_INFURA_URL;
-export const CHAIN_ID = process.env.REACT_APP_CHAIN_ID
+export const CHAIN_ID = process.env.REACT_APP_CHAIN_ID;
 
 export const NFT_CONTRACT = {
     ADDRESS: process.env.REACT_APP_NFT_ADDRESS,
@@ -55,6 +55,7 @@ export const ANIMATIONS = [
     'animationSeven',
     'animationTwelve',
 ];
+
 export const WEBURL = {
-    METAMASKURL: 'https://metamask.io/download.html'
-}
+    METAMASKURL: 'https://metamask.io/download.html',
+};

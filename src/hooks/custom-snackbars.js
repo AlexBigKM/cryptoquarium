@@ -26,7 +26,7 @@ export function useCustomSnackbar() {
 
     const showSuccess = (msgType) => {
         enqueueSnackbar(msgType, { variant: 'success' });
-    }
+    };
 
     return {
         enqueueSnackbar,

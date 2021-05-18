@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useAppState } from '../../app-state';
 import { NavLink } from 'react-router-dom'
 import Container from '@material-ui/core/Container'
-import { WEBURL, NETWORK_TYPE } from '../../constants';
+import { WEBURL, NETWORK_TYPE, ROUTES } from '../../constants';
 import SideBar from '../SideBar/SideBar'
 import {useStyles} from "../../style.js"
 
@@ -37,13 +37,13 @@ const Header = () => {
                 <nav className={classes.headerMenu}>
                     <ul className={classes.headerMenuItem}>
                         <li className={classes.headerMenuItems}>
-                            <NavLink  to="/main">MARKETPLACE</NavLink>
+                            <NavLink  to={ROUTES.MAIN}>MARKETPLACE</NavLink>
                         </li>
                         <li className={classes.headerMenuItems}>
-                            <NavLink  to="/faq">FAQ</NavLink>
+                            <NavLink  to={ROUTES.FAQ}>FAQ</NavLink>
                         </li>
                         <li className={classes.headerMenuItems}>
-                            <NavLink  to="/contact">CONTACT</NavLink>
+                            <NavLink  to={ROUTES.CONTACT}>CONTACT</NavLink>
                         </li>
                     </ul>
                     <ul className={classes.headerMenuAuth}>
