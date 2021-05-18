@@ -5,7 +5,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
-import {useStyles} from "../../style.js"
+import { useStyles } from '../../style.js';
 
 const SideBar = () => {
     const classes = useStyles();
@@ -16,54 +16,54 @@ const SideBar = () => {
     const menuItems = [
         {
             text: 'Marketplace',
-            path: '/main'
+            path: '/main',
         },
         {
             text: 'FAQ',
-            path: '/faq'
+            path: '/faq',
         },
         {
             text: 'Contact',
-            path: '/contact'
-        }
-    ]
+            path: '/contact',
+        },
+    ];
 
     const toggleDrawer = (open) => (event) => {
-        setState(open)
-    }
-
+        setState(open);
+    };
 
     return (
         <>
-        <div onClick={toggleDrawer(true)} className={classes.sideBarBtn}>
-            <span className={classes.sideBarBtnSpan}></span>
-            <span className={classes.sideBarBtnSpan}></span>
-            <span className={classes.sideBarBtnSpan}></span>
-        </div>
-        <Drawer
-            className={classes.drawer}
-            anchor="left"
-            open={state}
-            onClose={toggleDrawer(false)}
-            classes={{paper: classes.drawerPaper}}>
-            <List>
-                {
-                    menuItems.map(item => (
+            <div onClick={toggleDrawer(true)} className={classes.sideBarBtn}>
+                <span className={classes.sideBarBtnSpan}></span>
+                <span className={classes.sideBarBtnSpan}></span>
+                <span className={classes.sideBarBtnSpan}></span>
+            </div>
+            <Drawer
+                className={classes.drawer}
+                anchor="left"
+                open={state}
+                onClose={toggleDrawer(false)}
+                classes={{ paper: classes.drawerPaper }}
+            >
+                <List>
+                    {menuItems.map((item) => (
                         <ListItem
-                         button
-                         key={item.text}
-                         onClick={() => history.push(item.path)}
-                         className={location.pathname == item.path ? classes.active : null}>
-                           <ListItemText
-                               style={{textAlign: 'center', textTransform: 'uppercase', color: '#6FED9B'}}
-                               primary={item.text} />
+                            button
+                            key={item.text}
+                            onClick={() => history.push(item.path)}
+                            className={location.pathname == item.path ? classes.active : null}
+                        >
+                            <ListItemText
+                                style={{ textAlign: 'center', textTransform: 'uppercase', color: '#6FED9B' }}
+                                primary={item.text}
+                            />
                         </ListItem>
-                    ))
-                }
-            </List>
-        </Drawer>
-            </>
-        )
-}
+                    ))}
+                </List>
+            </Drawer>
+        </>
+    );
+};
 
 export default SideBar;
