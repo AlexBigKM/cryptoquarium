@@ -673,6 +673,7 @@ export const useStyles = makeStyles((theme) => ({
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
+        perspective: '1000px',
     },
     mainFishes: {
         padding: '10px',
@@ -706,6 +707,7 @@ export const useStyles = makeStyles((theme) => ({
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
+        perspective: '1000px',
     },
     marketItemDescr: {
         width: '50%',
