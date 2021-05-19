@@ -14,7 +14,7 @@ ReactDOM.render(
         <SnackbarProvider
             maxSnack={2}
             autoHideDuration={2000}
-            anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+            anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
         >
             <ContextProvider>
                 <MetamaskAccountDetector>
