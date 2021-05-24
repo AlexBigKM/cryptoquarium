@@ -914,17 +914,26 @@ export const useStyles = makeStyles((theme) => ({
         fishMarket: {
             gridTemplateColumns: 'repeat(3, minmax(250px, 1fr))',
         },
-    },
-    '@media (max-width: 1080px)': {
-        fishMarket: {
-            gridTemplateColumns: 'repeat(2, minmax(250px, 1fr))',
-            gridGap: '30px 20px',
-        },
         marketItemImg: {
             height: '427px',
             '& img': {
                 width: '130px',
             },
+        },
+        marketItem: {
+            alignItems: 'center',
+        },
+        marketItemTitle: {
+            marginTop: 0,
+        },
+        aquaCreatures: {
+            gridTemplateColumns: 'repeat(2, minmax(250px, 1fr))',
+        },
+    },
+    '@media (max-width: 1080px)': {
+        fishMarket: {
+            gridTemplateColumns: 'repeat(2, minmax(250px, 1fr))',
+            gridGap: '30px 20px',
         },
         marketItemTitle: {
             fontSize: '50px',
@@ -932,9 +941,6 @@ export const useStyles = makeStyles((theme) => ({
         },
         marketItemTitleItem: {
             fontSize: '25px',
-        },
-        aquaCreatures: {
-            gridTemplateColumns: 'repeat(2, minmax(250px, 1fr))',
         },
         marketTableTitle: {
             textAlign: 'center',
