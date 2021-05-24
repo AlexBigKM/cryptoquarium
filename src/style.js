@@ -84,7 +84,7 @@ export const useStyles = makeStyles((theme) => ({
     },
 
     wrapper: {
-        minHeight: 'calc(100% - 90px)',
+        minHeight: 'calc(100vh - 90px)',
         backgroundImage: 'url(' + background + ')',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
