@@ -1,9 +1,10 @@
-html body {
+html, body {
   margin: 0;
   padding: 0;
   height: 100%;
   box-sizing: border-box;
   overflow-x: hidden;
+  scroll-behavior: smooth;
   font-family: 'Roboto',sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
