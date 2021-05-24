@@ -90,6 +90,7 @@ export const useStyles = makeStyles((theme) => ({
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
+        scrollBehavior: 'smooth',
     },
     mainBar: {
         backgroundColor: '#070B15',
