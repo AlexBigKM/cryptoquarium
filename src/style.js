@@ -88,9 +88,12 @@ export const useStyles = makeStyles((theme) => ({
         backgroundImage: 'url(' + background + ')',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        // backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
         overflow: 'hidden',
+        '-webkit-background-size': 'cover',
+        '-moz-background-size': 'cover',
+        '-o-background-size': 'cover',
     },
     mainBar: {
         backgroundColor: '#070B15',
