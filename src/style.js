@@ -914,17 +914,26 @@ export const useStyles = makeStyles((theme) => ({
         fishMarket: {
             gridTemplateColumns: 'repeat(3, minmax(250px, 1fr))',
         },
-    },
-    '@media (max-width: 1080px)': {
-        fishMarket: {
-            gridTemplateColumns: 'repeat(2, minmax(250px, 1fr))',
-            gridGap: '30px 20px',
-        },
         marketItemImg: {
             height: '427px',
             '& img': {
                 width: '130px',
             },
+        },
+        marketItem: {
+            alignItems: 'center',
+        },
+        marketItemTitle: {
+            marginTop: 0,
+        },
+        aquaCreatures: {
+            gridTemplateColumns: 'repeat(2, minmax(250px, 1fr))',
+        },
+    },
+    '@media (max-width: 1080px)': {
+        fishMarket: {
+            gridTemplateColumns: 'repeat(2, minmax(250px, 1fr))',
+            gridGap: '30px 20px',
         },
         marketItemTitle: {
             fontSize: '50px',
@@ -932,9 +941,6 @@ export const useStyles = makeStyles((theme) => ({
         },
         marketItemTitleItem: {
             fontSize: '25px',
-        },
-        aquaCreatures: {
-            gridTemplateColumns: 'repeat(2, minmax(250px, 1fr))',
         },
         marketTableTitle: {
             textAlign: 'center',
@@ -1221,6 +1227,41 @@ export const useStyles = makeStyles((theme) => ({
             fontSize: '12px',
             marginLeft: '0',
         },
+        '@keyframes moving-bigfish': {
+            '0%': {
+                transform: 'translate(0, 0)',
+            },
+            '10%': {
+                transform: 'rotateY(180deg)',
+            },
+            '20%': {
+                transform: 'translateX(50px) rotateY(180deg)',
+            },
+            '30%': {
+                transform: 'translateX(50px)',
+            },
+            '40%': {
+                transform: 'translateX(-50px)',
+            },
+            '50%': {
+                transform: 'translateX(-50px) rotateY(180deg)',
+            },
+            '60%': {
+                transform: 'translate(50px, -20px) rotateY(180deg)',
+            },
+            '70%': {
+                transform: 'translate(50px, -20px)',
+            },
+            '80%': {
+                transform: 'translateX(30px)',
+            },
+            '90%': {
+                transform: 'translateY(70px)',
+            },
+            '100%': {
+                transform: 'translate(0, 0)',
+            },
+        },
     },
     '@media (max-width: 320px)': {
         marketItemImg: {
@@ -1229,6 +1270,15 @@ export const useStyles = makeStyles((theme) => ({
             '& img': {
                 width: '70px',
             },
+        },
+    },
+    '@media (max-width: 285px)': {
+        mainFormBtn: {
+            marginLeft: '5px',
+        },
+        marketItemImg: {
+            width: '258px',
+            height: '230px',
         },
     },
 }));
