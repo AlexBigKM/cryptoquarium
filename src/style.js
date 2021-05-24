@@ -178,7 +178,7 @@ export const useStyles = makeStyles((theme) => ({
     animationFive: {
         marginTop: '80px',
         animationName: '$moving-five',
-        animationDuration: '46s',
+        animationDuration: '50s',
         animationTimingFunction: 'infinite',
         animationIterationCount: 'infinite',
     },
@@ -353,36 +353,69 @@ export const useStyles = makeStyles((theme) => ({
         '0%': {
             transform: 'translate(0, 0)',
         },
+        '10%': {
+            transform: 'rotateY(180deg)',
+        },
         '20%': {
-            transform: 'translateY(-50px)',
-        },
-        '30%': {
-            transform: 'translateY(-50px)  rotateY(180deg)',
-        },
-        '40%': {
             transform: 'translateX(50px) rotateY(180deg)',
         },
-        '50%': {
+        '30%': {
             transform: 'translateX(50px)',
         },
-        '60%': {
-            transform: 'translateY(50px)',
-        },
-        '70%': {
-            transform: 'translateY(30px)',
-        },
-        '80%': {
+        '40%': {
             transform: 'translateX(-50px)',
         },
-        '90%': {
+        '50%': {
             transform: 'translateX(-50px) rotateY(180deg)',
         },
-        '95%': {
-            transform: 'translateX(0) rotateY(180deg)',
+        '60%': {
+            transform: 'translate(50px, -50px) rotateY(180deg)',
+        },
+        '70%': {
+            transform: 'translate(50px, -50px)',
+        },
+        '80%': {
+            transform: 'translateX(40px)',
+        },
+        '90%': {
+            transform: 'translateY(50px)',
         },
         '100%': {
-            transform: 'translate(0,0)',
+            transform: 'translate(0, 0)',
         },
+        // '0%': {
+        //     transform: 'translate(0, 0)',
+        // },
+        // '20%': {
+        //     transform: 'translateY(-50px)',
+        // },
+        // '30%': {
+        //     transform: 'translateY(-50px)  rotateY(180deg)',
+        // },
+        // '40%': {
+        //     transform: 'translateX(50px) rotateY(180deg)',
+        // },
+        // '50%': {
+        //     transform: 'translateX(50px)',
+        // },
+        // '60%': {
+        //     transform: 'translateY(50px)',
+        // },
+        // '70%': {
+        //     transform: 'translateY(30px)',
+        // },
+        // '80%': {
+        //     transform: 'translateX(-50px)',
+        // },
+        // '90%': {
+        //     transform: 'translateX(-50px) rotateY(180deg)',
+        // },
+        // '95%': {
+        //     transform: 'translateX(0) rotateY(180deg)',
+        // },
+        // '100%': {
+        //     transform: 'translate(0,0)',
+        // },
     },
     '@keyframes moving-six': {
         '0%': {
@@ -877,6 +910,11 @@ export const useStyles = makeStyles((theme) => ({
         fontSize: '10px',
         color: '#fff',
     },
+    '@media (max-width: 1200px)': {
+        fishMarket: {
+            gridTemplateColumns: 'repeat(3, minmax(250px, 1fr))',
+        },
+    },
     '@media (max-width: 1080px)': {
         fishMarket: {
             gridTemplateColumns: 'repeat(2, minmax(250px, 1fr))',
@@ -1090,7 +1128,12 @@ export const useStyles = makeStyles((theme) => ({
     },
     '@media (max-width: 500px)': {
         fishMarket: {
-            gridTemplateColumns: 'repeat(2, minmax(234px, 1fr))',
+            gridTemplateColumns: 'repeat(2, minmax(219px, 1fr))',
+        },
+    },
+    '@media (max-width: 458px)': {
+        fishMarket: {
+            gridTemplateColumns: 'repeat(1, minmax(219px, 1fr))',
         },
     },
     '@media (max-width: 415px)': {
