@@ -1144,6 +1144,15 @@ export const useStyles = makeStyles((theme) => ({
         wrapper: {
             backgroundAttachment: 'scroll',
         },
+        marketItemImg: {
+            height: '235px',
+        },
+        marketItemBtn: {
+            fontSize: '12px',
+        },
+        aquaCreatures: {
+            gridTemplateColumns: 'repeat(2, minmax(210px, 1fr))',
+        },
     },
     '@media (max-width: 415px)': {
         sideBarBtn: {
