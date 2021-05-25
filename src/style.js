@@ -1141,6 +1141,9 @@ export const useStyles = makeStyles((theme) => ({
         fishMarket: {
             gridTemplateColumns: 'repeat(1, minmax(219px, 1fr))',
         },
+        wrapper: {
+            backgroundAttachment: 'scroll',
+        },
     },
     '@media (max-width: 415px)': {
         sideBarBtn: {
