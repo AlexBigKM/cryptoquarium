@@ -1143,7 +1143,6 @@ export const useStyles = makeStyles((theme) => ({
         },
         wrapper: {
             backgroundAttachment: 'scroll',
-            scroll: 'smooth',
         },
         marketItemImg: {
             height: '235px',
