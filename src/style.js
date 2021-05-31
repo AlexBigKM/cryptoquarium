@@ -233,7 +233,7 @@ export const useStyles = makeStyles((theme) => ({
     },
     animationBigFish: {
         marginTop: '140px',
-        animationName: '$moving-bigfish',
+        animationName: '$moving-bigFish',
         animationDuration: '50s',
         animationTimingFunction: 'infinite',
         animationIterationCount: 'infinite',
@@ -656,7 +656,7 @@ export const useStyles = makeStyles((theme) => ({
             transform: 'translate(0, 0)',
         },
     },
-    '@keyframes moving-bigfish': {
+    '@keyframes moving-bigFish': {
         '0%': {
             transform: 'translate(0, 0)',
         },
